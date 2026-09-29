@@ -148,11 +148,11 @@ export const CartDrawer: React.FC = () => {
                     <div className="space-y-2 text-xs">
                       <div>
                         <span className="text-[#8C877E] block text-[11px]">Cuenta Corriente BCP Soles:</span>
-                        <span className="font-mono font-semibold text-[#F2EEE6]">193-98765432-0-11</span>
+                        <span className="font-mono font-semibold text-[#F2EEE6]">191-70701168-0-19</span>
                       </div>
                       <div>
                         <span className="text-[#8C877E] block text-[11px]">CCI Interbancario:</span>
-                        <span className="font-mono font-semibold text-[#F2EEE6]">002-193-009876543201-18</span>
+                        <span className="font-mono font-semibold text-[#F2EEE6]">00219117070116801955</span>
                       </div>
                     </div>
                   )}
