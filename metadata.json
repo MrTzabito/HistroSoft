@@ -1,0 +1,6 @@
+{
+  "name": "HistroSoft — Consultoría de software y productos empaquetados",
+  "description": "Consultoría de software para empresas: páginas web, CRM, ERP, aplicaciones móviles y automatizaciones a la medida y productos empaquetados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
