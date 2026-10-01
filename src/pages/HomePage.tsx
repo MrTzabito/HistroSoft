@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '../components/sections/HeroSection';
+import { FeaturedProductsSection } from '../components/sections/FeaturedProductsSection';
 import { CtaBandSection } from '../components/sections/CtaBandSection';
 import { useNavigate } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
@@ -27,6 +28,8 @@ export const HomePage: React.FC = () => {
         onExploreProducts={handleExploreProducts}
         onExploreConsultation={handleExploreConsultation}
       />
+
+      <FeaturedProductsSection />
 
       <CtaBandSection onOpenAgenda={handleOpenGeneralAgenda} />
     </>

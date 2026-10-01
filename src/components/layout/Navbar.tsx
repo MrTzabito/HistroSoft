@@ -28,9 +28,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
         <div className="h-16 md:h-20 flex items-center justify-between gap-4">
           {/* Zone 1: Brand Wordmark (Single text element) */}
           <div className="flex items-center">
-            <a href="#" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E] rounded-md">
+            <Link to="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E] rounded-md hover:opacity-80 transition-opacity">
               <Wordmark size="md" />
-            </a>
+            </Link>
           </div>
 
           {/* Zone 2: Clean text navigation links */}
