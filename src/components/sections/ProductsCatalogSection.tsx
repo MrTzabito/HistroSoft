@@ -36,9 +36,8 @@ export const ProductsCatalogSection: React.FC<ProductsCatalogSectionProps> = ({
   return (
     <section id="productos" className="py-20 md:py-28 border-b border-[#2B2B30] bg-[#121214] relative">
       <Container>
-        {/* Split Section Header with 01 as requested */}
+        {/* Split Section Header */}
         <SectionHeader
-          eyebrow="Productos"
           title="Elige tus herramientas."
           description="Agrega lo que necesites al carrito, revisa el total y paga por Yape o Plin. Cada producto cuenta con planes adaptados a tu escala y despliegue rápido."
         />
