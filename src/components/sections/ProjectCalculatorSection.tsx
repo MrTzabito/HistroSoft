@@ -101,7 +101,6 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          eyebrow="Calculadora de proyecto"
           title="Estima el plazo y la arquitectura de tu solución."
           description="Selecciona el tipo de desarrollo, nivel de alcance e integraciones clave para obtener una estimación técnica preliminar de semanas y sprints."
         />

@@ -35,8 +35,6 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          number="01"
-          eyebrow="Productos y planes"
           title="Soluciones ya creadas con planes listos para operar."
           description="Plataformas paquetizadas de ERP, CRM, Sistemas, Herramientas y Automatizaciones. Cada producto cuenta con planes adaptados a la escala de tu empresa, con infraestructura dedicada, soporte y opción de adaptaciones personalizadas."
         />

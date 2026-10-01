@@ -35,7 +35,6 @@ export const FeaturedProductsSection: React.FC = () => {
     <section className="py-20 md:py-28 border-b border-[#2B2B30] bg-[#0D0D0F] relative">
       <Container>
         <SectionHeader
-          eyebrow="Soluciones destacadas"
           title="Nuestros productos más adquiridos."
           description="Descubre las herramientas que están transformando negocios. Soluciones probadas y confiables para impulsar tu operación."
         />

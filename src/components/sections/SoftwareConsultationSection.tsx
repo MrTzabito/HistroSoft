@@ -66,7 +66,6 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          eyebrow="Consultas técnicas"
           title="Consulta sobre un producto o desarrollo a la medida."
           description="¿Tienes dudas sobre la compatibilidad de una plataforma o requieres una funcionalidad específica para tu empresa? Conversa directamente con nuestro equipo de ingeniería."
         />

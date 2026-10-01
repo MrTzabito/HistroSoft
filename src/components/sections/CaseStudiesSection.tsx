@@ -9,7 +9,6 @@ export const CaseStudiesSection: React.FC = () => {
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          eyebrow="Casos de estudio"
           title="Resultados cuantificados en producción."
           description="Sistemas reales operando en empresas con métricas de impacto comprobables tras su despliegue."
         />

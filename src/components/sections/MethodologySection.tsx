@@ -10,7 +10,6 @@ export const MethodologySection: React.FC = () => {
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          eyebrow="Metodología"
           title="Cuatro etapas, un responsable."
           description="Sin desvíos en el cronograma ni sobrecostos imprevistos. Cada fase termina con un artefacto de ingeniería validado por tu equipo."
         />

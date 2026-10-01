@@ -24,8 +24,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          number="01"
-          eyebrow="Servicios"
           title="Ingeniería y desarrollo de software a la medida."
           description="Construimos plataformas diseñadas específicamente para la operación real de tu empresa, sin imponer procesos prefabricados."
         />
