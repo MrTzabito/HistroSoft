@@ -32,7 +32,6 @@ export const FaqSection: React.FC = () => {
       <Container>
         {/* Split Section Header */}
         <SectionHeader
-          number="04"
           eyebrow="Preguntas frecuentes"
           title="Respuestas claras sobre productos, contratos y soporte."
           description="Transparencia total sobre aspectos técnicos, personalizaciones sobre productos, exportación de datos y niveles de servicio."
