@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Wordmark } from '../ui/Wordmark';
 import { Button } from '../ui/Button';
 import { Container } from './Container';
@@ -14,20 +15,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
   const { totalItems, openCart } = useCart();
 
   const navLinks = [
-    { label: 'Catálogo', href: '#productos' },
-    { label: 'Metodología', href: '#metodologia' },
-    { label: 'Casos', href: '#casos' },
-    { label: 'Preguntas', href: '#faq' },
-    { label: 'Software personalizado', href: '#consultar' },
+    { label: 'Productos', href: '/productos' },
+    { label: 'Metodología', href: '/metodologia' },
+    { label: 'Casos', href: '/casos' },
+    { label: 'Preguntas', href: '/preguntas' },
+    { label: 'Software personalizado', href: '/software' },
   ];
-
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0D0D0F]/86 backdrop-blur-[8px] border-b border-[#2B2B30] transition-colors">
@@ -43,17 +36,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
           {/* Zone 2: Clean text navigation links */}
           <nav className="hidden lg:flex items-center gap-7 text-xs md:text-sm font-medium text-[#D8D3C9]">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
+                to={link.href}
                 className="hover:text-[#F5B82E] transition-colors whitespace-nowrap py-1 cursor-pointer"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -99,17 +88,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
         <div className="lg:hidden border-b border-[#2B2B30] bg-[#121214] px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
+                to={link.href}
+                onClick={() => setMobileMenuOpen(false)}
                 className="text-sm font-medium text-[#D8D3C9] hover:text-[#F5B82E] py-1.5 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="pt-3 border-t border-[#2B2B30] space-y-2">
