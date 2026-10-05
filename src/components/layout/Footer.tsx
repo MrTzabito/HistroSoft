@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Wordmark } from '../ui/Wordmark';
 import { Container } from './Container';
 import { ArrowUpRight } from 'lucide-react';
@@ -58,9 +59,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
               Soluciones con planes
             </div>
             <ul className="space-y-2 text-xs text-[#B5B0A6]">
-              <li><a href="#productos" className="hover:text-[#F5B82E] transition-colors">Sistema de Ventas (Punto de venta y stock)</a></li>
-              <li><a href="#productos" className="hover:text-[#F5B82E] transition-colors">MyYapes (Registro y reenvío de pagos)</a></li>
-              <li><a href="#consultar" className="hover:text-[#F5B82E] transition-colors">Software a la medida (Desarrollo propio)</a></li>
+              <li><Link to="/productos" className="hover:text-[#F5B82E] transition-colors">Sistema de Ventas (Punto de venta y stock)</Link></li>
+              <li><Link to="/productos" className="hover:text-[#F5B82E] transition-colors">MyYapes (Registro y reenvío de pagos)</Link></li>
+              <li><Link to="/software" className="hover:text-[#F5B82E] transition-colors">Software a la medida (Desarrollo propio)</Link></li>
             </ul>
           </div>
 
@@ -71,18 +72,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
             </div>
             <div className="space-y-2 text-xs text-[#B5B0A6]">
               <p>
-                <a href="#metodologia" className="hover:text-[#F5B82E] transition-colors block">Metodología de 4 etapas</a>
+                <Link to="/metodologia" className="hover:text-[#F5B82E] transition-colors block">Metodología de 4 etapas</Link>
               </p>
               <p>
-                <a href="#casos" className="hover:text-[#F5B82E] transition-colors block">Casos de estudio cuantificados</a>
+                <Link to="/casos" className="hover:text-[#F5B82E] transition-colors block">Casos de estudio cuantificados</Link>
               </p>
               <p>
-                <a href="#faq" className="hover:text-[#F5B82E] transition-colors block">Preguntas frecuentes</a>
+                <Link to="/preguntas" className="hover:text-[#F5B82E] transition-colors block">Preguntas frecuentes</Link>
               </p>
               <p>
-                <a href="#consultar" className="text-[#F5B82E] hover:text-[#FFD36B] transition-colors flex items-center gap-1 font-semibold">
+                <Link to="/software" className="text-[#F5B82E] hover:text-[#FFD36B] transition-colors flex items-center gap-1 font-semibold">
                   Consultar software personalizado →
-                </a>
+                </Link>
               </p>
             </div>
           </div>
