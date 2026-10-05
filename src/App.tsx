@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ToastProvider } from './components/ui/Toast';
 import { CartProvider } from './context/CartContext';
 import { ModalProvider, useModal } from './context/ModalContext';
 import { Layout } from './components/layout/Layout';
 import { HomePage } from './pages/HomePage';
-import { ProductsPage } from './pages/ProductsPage';
-import { MethodologyPage } from './pages/MethodologyPage';
-import { CasesPage } from './pages/CasesPage';
-import { FaqPage } from './pages/FaqPage';
-import { SoftwarePage } from './pages/SoftwarePage';
+import { PageSkeleton } from './components/ui/Skeleton';
+
+// La portada se carga de inmediato; el resto de páginas se descargan al visitarlas
+const ProductsPage = lazy(() => import('./pages/ProductsPage').then((m) => ({ default: m.ProductsPage })));
+const MethodologyPage = lazy(() => import('./pages/MethodologyPage').then((m) => ({ default: m.MethodologyPage })));
+const CasesPage = lazy(() => import('./pages/CasesPage').then((m) => ({ default: m.CasesPage })));
+const FaqPage = lazy(() => import('./pages/FaqPage').then((m) => ({ default: m.FaqPage })));
+const SoftwarePage = lazy(() => import('./pages/SoftwarePage').then((m) => ({ default: m.SoftwarePage })));
 import { ContactModal } from './components/sections/ContactModal';
 
 // URLs antiguas (anclas #seccion) -> rutas actuales
@@ -45,9 +48,10 @@ function MainApp() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter useTransitions={false}>
       <LegacyHashRedirect />
       <Layout onOpenAgenda={handleOpenGeneralAgenda}>
+        <Suspense fallback={<PageSkeleton />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/productos" element={<ProductsPage />} />
@@ -60,6 +64,7 @@ function MainApp() {
           ))}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        </Suspense>
       </Layout>
 
       <ContactModal

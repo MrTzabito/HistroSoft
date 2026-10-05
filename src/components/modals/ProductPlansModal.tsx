@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dialog } from '../ui/Dialog';
 import { ProductDetails, PricingPlan, BillingCycle } from '../../types';
 import { useCart } from '../../context/CartContext';
@@ -11,6 +11,8 @@ export interface ProductPlansModalProps {
   open: boolean;
   onClose: () => void;
   onConsultCustom: (productName: string) => void;
+  /** Ciclo con el que abre el selector (por defecto anual). */
+  initialBillingCycle?: BillingCycle;
 }
 
 export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
@@ -18,9 +20,15 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
   open,
   onClose,
   onConsultCustom,
+  initialBillingCycle = 'annual',
 }) => {
   const { addItem } = useCart();
-  const [billingCycle, setBillingCycle] = useState<BillingCycle>('annual');
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>(initialBillingCycle);
+
+  // Cada vez que se abre, parte del ciclo indicado (p. ej. el que ya tiene el carrito)
+  useEffect(() => {
+    if (open) setBillingCycle(initialBillingCycle);
+  }, [open, initialBillingCycle]);
 
   if (!product) return null;
 

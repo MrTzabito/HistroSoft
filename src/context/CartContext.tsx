@@ -7,7 +7,6 @@ interface CartContextType {
   setCurrency: (c: Currency) => void;
   addItem: (product: ProductDetails, plan?: PricingPlan, billingCycle?: BillingCycle) => void;
   removeItem: (itemId: string) => void;
-  updateQuantity: (itemId: string, qty: number) => void;
   clearCart: () => void;
   totalAmount: number;
   totalItems: number;
@@ -19,10 +18,13 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // El carrito admite un solo sistema con un solo plan (para cambiar de plan se reemplaza).
+  // Si quedó guardado un carrito con varios, se conserva el último y con cantidad 1.
   const [items, setItems] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('histrosoft_cart');
-      return saved ? JSON.parse(saved) : [];
+      const parsed: CartItem[] = saved ? JSON.parse(saved) : [];
+      return parsed.length > 0 ? [{ ...parsed[parsed.length - 1], quantity: 1 }] : [];
     } catch {
       return [];
     }
@@ -47,40 +49,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const chosenPlan = plan || product.plans.find((p) => p.isPopular) || product.plans[0];
     const itemId = `${product.id}-${chosenPlan.id}-${billingCycle}`;
 
-    setItems((prev) => {
-      const existing = prev.find((i) => i.id === itemId);
-      if (existing) {
-        return prev.map((i) =>
-          i.id === itemId ? { ...i, quantity: i.quantity + 1 } : i
-        );
-      }
-      return [
-        ...prev,
-        {
-          id: itemId,
-          product,
-          plan: chosenPlan,
-          billingCycle,
-          quantity: 1,
-        },
-      ];
-    });
+    // Solo un sistema a la vez: elegir otro plan o producto reemplaza lo que había.
+    setItems([
+      {
+        id: itemId,
+        product,
+        plan: chosenPlan,
+        billingCycle,
+        quantity: 1,
+      },
+    ]);
 
     setIsCartOpen(true);
   };
 
   const removeItem = (itemId: string) => {
     setItems((prev) => prev.filter((i) => i.id !== itemId));
-  };
-
-  const updateQuantity = (itemId: string, qty: number) => {
-    if (qty <= 0) {
-      removeItem(itemId);
-      return;
-    }
-    setItems((prev) =>
-      prev.map((i) => (i.id === itemId ? { ...i, quantity: qty } : i))
-    );
   };
 
   const clearCart = () => {
@@ -103,7 +87,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setCurrency,
         addItem,
         removeItem,
-        updateQuantity,
         clearCart,
         totalAmount,
         totalItems,

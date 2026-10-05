@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[color:var(--green)]" />
             </span>
             <span className="font-sans font-bold text-[11px] uppercase tracking-[0.16em] text-[color:var(--accent)]">
-              Soluciones empresariales · Sistema de Ventas, MyYapes y Herramientas
+              Soluciones empresariales · Sistema de Ventas, Automatizaciones y Herramientas
             </span>
           </div>
 
@@ -51,7 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div data-reveal className="lg:col-span-8 space-y-6">
             <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-[color:var(--text-primary)] tracking-[-0.035em] leading-[1.0] text-balance">
-              Soluciones de software ya creadas con planes para tu empresa.
+              Soluciones de software para tu negocio.
             </h1>
 
             {/* Quick trust micro-badges with subtle float */}
@@ -73,7 +73,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           <div data-reveal style={{ '--reveal-delay': '180ms' } as React.CSSProperties} className="lg:col-span-4 lg:pt-3">
             <p className="font-sans text-base md:text-lg text-[color:var(--text-muted)] leading-relaxed">
-              Venta de plataformas ya creadas: Sistema de Ventas para control de caja e inventario, y MyYapes para registro automático y confirmación de pagos de tus clientes. Con planes listos para operar y opción de software personalizado a la medida.
+              Impulsa tu negocio con soluciones digitales que simplifican procesos, automatizan tareas y mejoran tu gestión. Contamos con soluciones listas para usar y desarrollo de software a medida.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button

@@ -7,6 +7,7 @@ import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/Button';
 import { Play, Plus, ArrowRight, ShoppingCart } from 'lucide-react';
 import { ProductPlansModal } from '../modals/ProductPlansModal';
+import { SkeletonImage } from '../ui/Skeleton';
 import { ProductDemoModal } from '../modals/ProductDemoModal';
 
 export interface ProductsCatalogSectionProps {
@@ -96,7 +97,7 @@ export const ProductsCatalogSection: React.FC<ProductsCatalogSectionProps> = ({
                   {/* Visual Software Image Preview Space */}
                   <div className="relative aspect-video w-full rounded-[14px] overflow-hidden bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] mb-4 group-hover:border-[color:var(--accent)]/40 transition-colors">
                     {product.imageUrl ? (
-                      <img
+                      <SkeletonImage
                         src={product.imageUrl}
                         alt={product.name}
                         className="w-full h-full object-cover object-top img-zoom"

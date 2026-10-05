@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
+import { ProductPlansModal } from '../modals/ProductPlansModal';
 import { useToast } from '../ui/Toast';
-import { X, Trash2, CheckCircle2, ArrowRight, ShieldCheck, Smartphone } from 'lucide-react';
-import { PaymentMethod } from '../../types';
+import { X, Trash2, CheckCircle2, ArrowRight, ShieldCheck, Smartphone, RefreshCw } from 'lucide-react';
+import { PaymentMethod, ProductDetails } from '../../types';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -12,12 +14,13 @@ export const CartDrawer: React.FC = () => {
     isCartOpen,
     closeCart,
     removeItem,
-    updateQuantity,
     clearCart,
     totalAmount,
   } = useCart();
 
   const { showToast } = useToast();
+  const navigate = useNavigate();
+  const [plansProduct, setPlansProduct] = useState<ProductDetails | null>(null);
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('yape');
   const [customerName, setCustomerName] = useState('');
@@ -78,7 +81,7 @@ export const CartDrawer: React.FC = () => {
           <div className="p-6 border-b border-[color:var(--border-subtle)] flex items-center justify-between">
             <div>
               <h3 className="font-display font-bold text-xl text-[color:var(--text-primary)]">
-                Carrito de herramientas
+                Carrito
               </h3>
               <p className="text-xs text-[color:var(--text-faint)] mt-0.5">
                 Revisa tus productos y paga fácilmente por Yape o Plin
@@ -316,34 +319,30 @@ export const CartDrawer: React.FC = () => {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between pt-2 border-t border-[color:var(--border-subtle)]/60">
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="w-6 h-6 rounded-full bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] flex items-center justify-center text-xs hover:border-[color:var(--border-hover)] cursor-pointer"
-                          >
-                            -
-                          </button>
-                          <span className="font-mono text-xs font-bold px-1.5">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-6 h-6 rounded-full bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] flex items-center justify-center text-xs hover:border-[color:var(--border-hover)] cursor-pointer"
-                          >
-                            +
-                          </button>
-                        </div>
+                      <div className="flex items-end justify-between gap-3 pt-2 border-t border-[color:var(--border-subtle)]/60">
+                        <p className="text-[11px] leading-snug text-[color:var(--text-faint)] max-w-[60%]">
+                          Un solo sistema por orden. Para cambiar de plan, elija otro y reemplazará este.
+                        </p>
 
                         <div className="text-right">
                           <span className="font-mono font-bold text-base text-[color:var(--text-primary)]">
-                            S/ {(price * item.quantity).toFixed(2)}
+                            S/ {price.toFixed(2)}
                           </span>
                           <span className="text-[10px] text-[color:var(--text-faint)] block">
                             / {isAnnual ? 'año' : 'mes'}
                           </span>
                         </div>
                       </div>
+
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => setPlansProduct(item.product)}
+                        className="w-full justify-center"
+                        iconLeft={<RefreshCw className="w-3.5 h-3.5" />}
+                      >
+                        Cambiar plan
+                      </Button>
                     </div>
                   );
                 })}
@@ -388,6 +387,18 @@ export const CartDrawer: React.FC = () => {
           )}
         </div>
       </div>
+
+      <ProductPlansModal
+        product={plansProduct}
+        open={plansProduct !== null}
+        initialBillingCycle={items[0]?.billingCycle}
+        onClose={() => setPlansProduct(null)}
+        onConsultCustom={() => {
+          setPlansProduct(null);
+          closeCart();
+          navigate('/software');
+        }}
+      />
     </div>
   );
 };

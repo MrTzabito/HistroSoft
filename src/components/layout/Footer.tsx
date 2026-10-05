@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
               01 — Puesta en marcha rápida
             </h4>
             <p className="text-xs text-[color:var(--text-muted)] leading-relaxed">
-              Servidores, bases de datos PostgreSQL y parametrización inicial aprovisionados en menos de 48 horas.
+              Servidores, bases de datos y parametrización inicial aprovisionados en menos de 48 horas.
             </p>
           </div>
           <div>
@@ -46,10 +46,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
           <div className="md:col-span-5 space-y-4">
             <Wordmark size="md" tone="dark" />
             <p className="text-xs text-[color:var(--text-muted)] max-w-sm leading-relaxed">
-              Soluciones de software ya creadas con planes listos para operar: Sistema de Ventas para tu negocio y MyYapes para control de transferencias. Con opción de desarrollo a la medida.
+              Impulsa tu negocio con soluciones digitales que simplifican procesos, automatizan tareas y mejoran tu gestión. Desarrollamos software a medida, adaptado a las necesidades de tu negocio.
             </p>
             <div className="pt-2 text-xs text-[color:var(--text-faint)] font-mono">
-              Contacto directo: <a href="https://wa.me/51913862963" target="_blank" rel="noopener noreferrer" className="text-[color:var(--accent)] hover:underline">+51 913 862 963</a>
+              Contacto directo: <a href="https://wa.me/51944017041" target="_blank" rel="noopener noreferrer" className="text-[color:var(--accent)] hover:underline">+51 944 017 041</a>
             </div>
           </div>
 
@@ -59,9 +59,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
               Soluciones con planes
             </div>
             <ul className="space-y-2 text-xs text-[color:var(--text-muted)]">
-              <li><Link to="/productos" className="hover:text-[color:var(--accent)] transition-colors">Sistema de Ventas (Punto de venta y stock)</Link></li>
-              <li><Link to="/productos" className="hover:text-[color:var(--accent)] transition-colors">MyYapes (Registro y reenvío de pagos)</Link></li>
-              <li><Link to="/software" className="hover:text-[color:var(--accent)] transition-colors">Software a la medida (Desarrollo propio)</Link></li>
+              <li><Link to="/productos" className="hover:text-[color:var(--accent)] transition-colors">Sistema de Ventas </Link></li>
+              <li><Link to="/productos" className="hover:text-[color:var(--accent)] transition-colors">MiPaguito </Link></li>
             </ul>
           </div>
 

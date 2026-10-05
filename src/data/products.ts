@@ -96,8 +96,8 @@ export const PRODUCTS: ProductDetails[] = [
     ]
   },
   {
-    id: 'myyapes',
-    name: 'MyYapes',
+    id: 'mipaguito',
+    name: 'MiPaguito',
     category: 'Herramientas',
     categorySlug: 'herramientas',
     badge: 'Destacado',

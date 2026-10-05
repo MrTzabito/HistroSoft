@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container } from '../layout/Container';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Button } from '../ui/Button';
+import { SkeletonImage } from '../ui/Skeleton';
 import { PRODUCTS } from '../../data/products';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
@@ -21,13 +22,7 @@ export const FeaturedProductsSection: React.FC = () => {
   const handleAddToCart = (productId: string) => {
     const product = PRODUCTS.find(p => p.id === productId);
     if (product) {
-      addItem({
-        productId: product.id,
-        productName: product.name,
-        quantity: 1,
-        priceUSD: product.priceMonthlyUSD,
-        pricePEN: product.priceMonthlyPEN,
-      });
+      addItem(product);
     }
   };
 
@@ -52,7 +47,7 @@ export const FeaturedProductsSection: React.FC = () => {
                 {/* Image Preview */}
                 {product.imageUrl && (
                   <div className="relative aspect-video w-full rounded-[14px] overflow-hidden bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] mb-4 group-hover:border-[color:var(--accent)]/40 transition-colors">
-                    <img
+                    <SkeletonImage
                       src={product.imageUrl}
                       alt={product.name}
                       className="w-full h-full object-cover"

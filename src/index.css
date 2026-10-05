@@ -362,3 +362,24 @@
   [data-reveal].is-visible, .draw-line { animation: none; }
   .animate-ambient-glow, .animate-float-gentle, .animate-pulse-subtle { animation: none; }
 }
+
+/* Esqueletos de carga: bloque con brillo que recorre (colores según el tema) */
+.skeleton {
+  background-color: var(--surface-overlay);
+  background-image: linear-gradient(
+    100deg,
+    transparent 20%,
+    color-mix(in srgb, var(--border-default) 70%, transparent) 50%,
+    transparent 80%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-sheen 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-sheen {
+  from { background-position: 160% 0; }
+  to   { background-position: -60% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
