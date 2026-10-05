@@ -23,23 +23,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0D0D0F]/86 backdrop-blur-[8px] border-b border-[#2B2B30] transition-colors">
+    <header className="sticky top-0 z-40 w-full bg-[color:var(--surface-page)]/86 backdrop-blur-[8px] border-b border-[color:var(--border-subtle)] transition-colors">
       <Container>
         <div className="h-16 md:h-20 flex items-center justify-between gap-4">
           {/* Zone 1: Brand Wordmark (Single text element) */}
           <div className="flex items-center">
-            <Link to="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E] rounded-md hover:opacity-80 transition-opacity">
+            <Link to="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] rounded-md hover:opacity-80 transition-opacity">
               <Wordmark size="md" />
             </Link>
           </div>
 
           {/* Zone 2: Clean text navigation links */}
-          <nav className="hidden lg:flex items-center gap-7 text-xs md:text-sm font-medium text-[#D8D3C9]">
+          <nav className="hidden lg:flex items-center gap-7 text-xs md:text-sm font-medium text-[color:var(--text-secondary)]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="hover:text-[#F5B82E] transition-colors whitespace-nowrap py-1 cursor-pointer"
+                className="hover:text-[color:var(--accent)] transition-colors whitespace-nowrap py-1 cursor-pointer"
               >
                 {link.label}
               </Link>
@@ -51,12 +51,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
             {/* Cart Button */}
             <button
               onClick={openCart}
-              className="relative p-2 rounded-full border border-[#2B2B30] text-[#D8D3C9] hover:text-[#F2EEE6] hover:border-[#F5B82E] transition-colors cursor-pointer"
+              className="relative p-2 rounded-full border border-[color:var(--border-subtle)] text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--accent)] transition-colors cursor-pointer"
               aria-label="Abrir carrito de compras"
             >
               <ShoppingCart className="w-4 h-4" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#F5B82E] text-[#17130A] text-[10px] font-mono font-bold flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[color:var(--accent)] text-[color:var(--accent-fg)] text-[10px] font-mono font-bold flex items-center justify-center">
                   {totalItems}
                 </span>
               )}
@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
             {/* Mobile menu toggle button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#D8D3C9] hover:text-[#F2EEE6] rounded-full border border-[#2B2B30] hover:border-[#4A4A52] cursor-pointer"
+              className="lg:hidden p-2 text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] rounded-full border border-[color:var(--border-subtle)] hover:border-[color:var(--border-strong)] cursor-pointer"
               aria-label="Abrir menú"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -85,28 +85,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#2B2B30] bg-[#121214] px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="lg:hidden border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)] px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-[#D8D3C9] hover:text-[#F5B82E] py-1.5 transition-colors"
+                className="text-sm font-medium text-[color:var(--text-secondary)] hover:text-[color:var(--accent)] py-1.5 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="pt-3 border-t border-[#2B2B30] space-y-2">
+          <div className="pt-3 border-t border-[color:var(--border-subtle)] space-y-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 openCart();
               }}
-              className="w-full flex items-center justify-center gap-2 py-2 rounded-full border border-[#2B2B30] text-sm text-[#F2EEE6]"
+              className="w-full flex items-center justify-center gap-2 py-2 rounded-full border border-[color:var(--border-subtle)] text-sm text-[color:var(--text-primary)]"
             >
-              <ShoppingCart className="w-4 h-4 text-[#F5B82E]" />
+              <ShoppingCart className="w-4 h-4 text-[color:var(--accent)]" />
               <span>Ver carrito ({totalItems})</span>
             </button>
             <Button

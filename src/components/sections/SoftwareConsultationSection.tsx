@@ -62,7 +62,7 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
   };
 
   return (
-    <section id="consultar" className="py-20 md:py-28 border-b border-[#2B2B30] bg-[#121214]">
+    <section id="consultar" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -73,28 +73,28 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left 4 cols: Context & Guarantees */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="p-6 rounded-[22px] bg-[#17171A] border border-[#2B2B30] space-y-4 card-interactive">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.16em] text-[#F5B82E] block">
+            <div data-reveal className="p-6 rounded-[22px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] space-y-4 card-interactive">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.16em] text-[color:var(--accent)] block">
                 Atención directa
               </span>
-              <h3 className="font-display font-bold text-xl text-[#F2EEE6] tracking-tight">
+              <h3 className="font-display font-bold text-xl text-[color:var(--text-primary)] tracking-tight">
                 Respuestas técnicas, no discursos comerciales.
               </h3>
-              <p className="text-xs text-[#B5B0A6] leading-relaxed">
+              <p className="text-xs text-[color:var(--text-muted)] leading-relaxed">
                 Evaluamos la viabilidad de tus sistemas actuales, volumen de datos y requerimientos de seguridad antes de proponerte un plan o desarrollo.
               </p>
 
-              <div className="space-y-3 pt-3 border-t border-[#2B2B30] text-xs text-[#D8D3C9]">
+              <div className="space-y-3 pt-3 border-t border-[color:var(--border-subtle)] text-xs text-[color:var(--text-secondary)]">
                 <div className="flex items-center gap-2.5">
-                  <Clock className="w-4 h-4 text-[#F5B82E] shrink-0" />
+                  <Clock className="w-4 h-4 text-[color:var(--accent)] shrink-0" />
                   <span>Respuesta técnica en menos de 24 horas</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-[#8FD694] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[color:var(--green)] shrink-0" />
                   <span>Confidencialidad garantizada de tus datos</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <Terminal className="w-4 h-4 text-[#7CC4FF] shrink-0" />
+                  <Terminal className="w-4 h-4 text-[color:var(--blue)] shrink-0" />
                   <span>Evaluación preliminar de arquitectura sin costo</span>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
                   variant="secondary"
                   size="sm"
                   onClick={onOpenAgenda}
-                  className="w-full justify-center hover:border-[#F5B82E] transition-all"
+                  className="w-full justify-center hover:border-[color:var(--accent)] transition-all"
                 >
                   O agenda una videollamada directa →
                 </Button>
@@ -113,25 +113,25 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
           </div>
 
           {/* Right 8 cols: Interactive Consultation Form */}
-          <div className="lg:col-span-8 p-6 md:p-8 rounded-[22px] bg-[#17171A] border border-[#2B2B30] card-interactive">
+          <div data-reveal style={{ '--reveal-delay': '120ms' } as React.CSSProperties} className="lg:col-span-8 p-6 md:p-8 rounded-[22px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] card-interactive">
             {submitted ? (
               <div className="py-8 space-y-6 text-center animate-in fade-in duration-200">
-                <div className="w-14 h-14 rounded-full bg-[#1C2A1D] border border-[#8FD694]/30 flex items-center justify-center mx-auto text-[#8FD694]">
+                <div className="w-14 h-14 rounded-full bg-[color:var(--green-soft)] border border-[color:var(--green)]/30 flex items-center justify-center mx-auto text-[color:var(--green)]">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <div className="space-y-2 max-w-md mx-auto">
-                  <h4 className="font-display font-bold text-2xl text-[#F2EEE6]">
+                  <h4 className="font-display font-bold text-2xl text-[color:var(--text-primary)]">
                     Consulta registrada con éxito.
                   </h4>
-                  <p className="text-xs text-[#B5B0A6] leading-relaxed">
-                    Hemos asignado tu requerimiento a un ingeniero técnico. Te contactaremos al correo <strong className="text-[#F2EEE6]">{email}</strong> en un plazo máximo de 24 horas hábiles.
+                  <p className="text-xs text-[color:var(--text-muted)] leading-relaxed">
+                    Hemos asignado tu requerimiento a un ingeniero técnico. Te contactaremos al correo <strong className="text-[color:var(--text-primary)]">{email}</strong> en un plazo máximo de 24 horas hábiles.
                   </p>
                 </div>
 
-                <div className="p-4 rounded-[12px] bg-[#121214] border border-[#2B2B30] max-w-md mx-auto text-left text-xs text-[#B5B0A6] space-y-1">
-                  <div><strong className="text-[#D8D3C9]">Tipo de consulta:</strong> {topic === 'producto' ? `Producto (${selectedProduct})` : topic === 'adaptacion' ? 'Adaptación a medida' : 'Software a medida'}</div>
-                  <div><strong className="text-[#D8D3C9]">Empresa:</strong> {company}</div>
-                  <div><strong className="text-[#D8D3C9]">Contacto:</strong> {name}</div>
+                <div className="p-4 rounded-[12px] bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] max-w-md mx-auto text-left text-xs text-[color:var(--text-muted)] space-y-1">
+                  <div><strong className="text-[color:var(--text-secondary)]">Tipo de consulta:</strong> {topic === 'producto' ? `Producto (${selectedProduct})` : topic === 'adaptacion' ? 'Adaptación a medida' : 'Software a medida'}</div>
+                  <div><strong className="text-[color:var(--text-secondary)]">Empresa:</strong> {company}</div>
+                  <div><strong className="text-[color:var(--text-secondary)]">Contacto:</strong> {name}</div>
                 </div>
 
                 <div className="pt-2">
@@ -144,7 +144,7 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
               <form onSubmit={handleSubmit} className="space-y-6 text-left">
                 {/* Topic Selector Tabs */}
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-[#D8D3C9] block">
+                  <label className="text-xs font-semibold text-[color:var(--text-secondary)] block">
                     ¿Sobre qué deseas consultar?
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -160,8 +160,8 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
                         onClick={() => setTopic(item.id)}
                         className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                           topic === item.id
-                            ? 'bg-[#F2EEE6] text-[#0D0D0F]'
-                            : 'bg-[#121214] text-[#B5B0A6] border border-[#2B2B30] hover:text-[#F2EEE6] hover:border-[#4A4A52]'
+                            ? 'bg-[color:var(--contrast-fill)] text-[color:var(--contrast-fg)]'
+                            : 'bg-[color:var(--surface-sunken)] text-[color:var(--text-muted)] border border-[color:var(--border-subtle)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-strong)]'
                         }`}
                       >
                         {item.label}
@@ -172,7 +172,7 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
 
                 {/* If product selected, choose product */}
                 {topic === 'producto' && (
-                  <div className="p-4 rounded-[12px] bg-[#121214] border border-[#2B2B30]">
+                  <div className="p-4 rounded-[12px] bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)]">
                     <Select
                       label="Selecciona la solución ya creada de tu interés"
                       value={selectedProduct}
@@ -216,11 +216,11 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
                   />
 
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-semibold text-[#D8D3C9]">
+                    <label className="block text-xs font-semibold text-[color:var(--text-secondary)]">
                       Usuarios estimados
                     </label>
                     <select
-                      className="w-full h-[44px] px-3.5 bg-[#121214] border border-[#2B2B30] rounded-[12px] text-sm text-[#F2EEE6] focus:border-[#F5B82E] focus:outline-none"
+                      className="w-full h-[44px] px-3.5 bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] rounded-[12px] text-sm text-[color:var(--text-primary)] focus:border-[color:var(--accent)] focus:outline-none"
                     >
                       <option value="1-5">1 a 5 usuarios</option>
                       <option value="6-15">6 a 15 usuarios</option>
@@ -239,8 +239,8 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
                   error={errors.query}
                 />
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#2B2B30]">
-                  <span className="text-[11px] text-[#8C877E]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[color:var(--border-subtle)]">
+                  <span className="text-[11px] text-[color:var(--text-faint)]">
                     Tus datos se usan exclusivamente para responder a tu consulta.
                   </span>
 

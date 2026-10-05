@@ -119,25 +119,25 @@ export const ContactModal: React.FC<ContactModalProps> = ({
     >
       {submitted ? (
         <div className="py-6 space-y-6 text-center">
-          <div className="w-14 h-14 rounded-full bg-[#1C2A1D] border border-[#8FD694]/30 flex items-center justify-center mx-auto text-[#8FD694]">
+          <div className="w-14 h-14 rounded-full bg-[color:var(--green-soft)] border border-[color:var(--green)]/30 flex items-center justify-center mx-auto text-[color:var(--green)]">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <div className="space-y-2 max-w-md mx-auto">
-            <h4 className="font-display font-bold text-xl text-[#F2EEE6]">
+            <h4 className="font-display font-bold text-xl text-[color:var(--text-primary)]">
               {mode === 'call'
                 ? `Reunión pre-agendada para ${preferredDay} a las ${preferredHour}`
                 : 'Propuesta en preparación'}
             </h4>
-            <p className="text-xs text-[#B5B0A6] leading-relaxed">
-              Enviamos un correo de confirmación a <strong className="text-[#F2EEE6]">{email}</strong> con los detalles y el enlace a la sala virtual.
+            <p className="text-xs text-[color:var(--text-muted)] leading-relaxed">
+              Enviamos un correo de confirmación a <strong className="text-[color:var(--text-primary)]">{email}</strong> con los detalles y el enlace a la sala virtual.
             </p>
           </div>
 
-          <div className="p-4 rounded-[12px] bg-[#121214] border border-[#2B2B30] text-left max-w-md mx-auto text-xs space-y-1.5 text-[#B5B0A6]">
-            <div><strong className="text-[#D8D3C9]">Contacto:</strong> {name} ({company})</div>
-            {notes && <div><strong className="text-[#D8D3C9]">Nota:</strong> {notes}</div>}
-            <div><strong className="text-[#D8D3C9]">Respuesta técnica garantizada:</strong> Menos de 24 horas</div>
+          <div className="p-4 rounded-[12px] bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] text-left max-w-md mx-auto text-xs space-y-1.5 text-[color:var(--text-muted)]">
+            <div><strong className="text-[color:var(--text-secondary)]">Contacto:</strong> {name} ({company})</div>
+            {notes && <div><strong className="text-[color:var(--text-secondary)]">Nota:</strong> {notes}</div>}
+            <div><strong className="text-[color:var(--text-secondary)]">Respuesta técnica garantizada:</strong> Menos de 24 horas</div>
           </div>
 
           <div className="pt-2">
@@ -149,14 +149,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Mode Switcher Tabs */}
-          <div className="flex items-center gap-2 p-1 bg-[#121214] border border-[#2B2B30] rounded-full w-fit">
+          <div className="flex items-center gap-2 p-1 bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] rounded-full w-fit">
             <button
               type="button"
               onClick={() => setMode('call')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 mode === 'call'
-                  ? 'bg-[#F2EEE6] text-[#0D0D0F]'
-                  : 'text-[#B5B0A6] hover:text-[#F2EEE6]'
+                  ? 'bg-[color:var(--contrast-fill)] text-[color:var(--contrast-fg)]'
+                  : 'text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)]'
               }`}
             >
               Agenda una llamada
@@ -166,8 +166,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({
               onClick={() => setMode('quote')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 mode === 'quote'
-                  ? 'bg-[#F2EEE6] text-[#0D0D0F]'
-                  : 'text-[#B5B0A6] hover:text-[#F2EEE6]'
+                  ? 'bg-[color:var(--contrast-fill)] text-[color:var(--contrast-fg)]'
+                  : 'text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)]'
               }`}
             >
               Solicitar propuesta por escrito
@@ -210,7 +210,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           </div>
 
           {mode === 'call' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-[12px] bg-[#121214] border border-[#2B2B30]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-[12px] bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)]">
               <Select
                 label="Día preferido"
                 value={preferredDay}
@@ -247,8 +247,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             onChange={(e) => setNotes(e.target.value)}
           />
 
-          <div className="flex items-center justify-between pt-3 border-t border-[#2B2B30]">
-            <span className="text-[11px] text-[#8C877E]">
+          <div className="flex items-center justify-between pt-3 border-t border-[color:var(--border-subtle)]">
+            <span className="text-[11px] text-[color:var(--text-faint)]">
               Acuerdo de confidencialidad estándar incluido
             </span>
 

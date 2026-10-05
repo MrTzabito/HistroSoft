@@ -28,7 +28,7 @@ export const FaqSection: React.FC = () => {
   }));
 
   return (
-    <section id="faq" className="py-20 md:py-28 border-b border-[#2B2B30]">
+    <section id="faq" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -37,15 +37,15 @@ export const FaqSection: React.FC = () => {
         />
 
         {/* Filter categories tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[#2B2B30]">
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[color:var(--border-subtle)]">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-[#F2EEE6] text-[#0D0D0F]'
-                  : 'bg-[#17171A] text-[#B5B0A6] border border-[#2B2B30] hover:text-[#F2EEE6] hover:border-[#4A4A52]'
+                  ? 'bg-[color:var(--contrast-fill)] text-[color:var(--contrast-fg)]'
+                  : 'bg-[color:var(--surface-raised)] text-[color:var(--text-muted)] border border-[color:var(--border-subtle)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-strong)]'
               }`}
             >
               {cat.label}

@@ -47,7 +47,7 @@ export const Dialog: React.FC<DialogProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Dialog Scrim (black 64%) */}
       <div
-        className="fixed inset-0 bg-black/64 backdrop-blur-xs transition-opacity duration-300"
+        className="fixed inset-0 bg-[color:var(--azul-noche)]/60 backdrop-blur-xs transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -57,25 +57,25 @@ export const Dialog: React.FC<DialogProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="dialog-title"
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#17171A] border border-[#2B2B30] rounded-[22px] shadow-[0_12px_36px_rgba(0,0,0,0.65),0_4px_12px_rgba(0,0,0,0.4)] p-6 md:p-8 z-10 my-8 max-h-[90vh] overflow-y-auto text-left transform transition-all duration-300 animate-in fade-in zoom-in-95`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-[22px] shadow-[0_12px_36px_rgba(11,31,68,0.28),0_4px_12px_rgba(11,31,68,0.18)] p-6 md:p-8 z-10 my-8 max-h-[90vh] overflow-y-auto text-left transform transition-all duration-300 animate-in fade-in zoom-in-95`}
       >
-        <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-[#2B2B30]">
+        <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-[color:var(--border-subtle)]">
           <div>
             <h3
               id="dialog-title"
-              className="font-display font-bold text-xl md:text-2xl text-[#F2EEE6] tracking-tight"
+              className="font-display font-bold text-xl md:text-2xl text-[color:var(--text-primary)] tracking-tight"
             >
               {title}
             </h3>
             {description && (
-              <p className="text-xs md:text-sm text-[#B5B0A6] mt-1 leading-relaxed">
+              <p className="text-xs md:text-sm text-[color:var(--text-muted)] mt-1 leading-relaxed">
                 {description}
               </p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full border border-[#2B2B30] flex items-center justify-center text-[#B5B0A6] hover:text-[#F2EEE6] hover:border-[#8C877E] transition-colors shrink-0 cursor-pointer"
+            className="w-8 h-8 rounded-full border border-[color:var(--border-subtle)] flex items-center justify-center text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] transition-colors shrink-0 cursor-pointer"
             aria-label="Cerrar ventana"
           >
             <X className="w-4 h-4" />

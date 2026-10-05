@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
 
     /* Spacing */
     --space-0: 0;
@@ -39,81 +45,109 @@
     --border-w: 1px;
 
     /* Fonts */
-    --font-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
-    --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --font-display: "Poppins", system-ui, sans-serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-    /* Night — backgrounds */
-    --night-950: #0D0D0F;
-    --night-900: #121214;
-    --night-850: #17171A;
-    --night-800: #1F1F23;
-    --night-750: #26262B;
-    --night-700: #2B2B30;
-    --night-600: #3A3A40;
-    --night-500: #4A4A52;
+    /* Marca HistroSoft (proporción 60% blanco/niebla, 30% azul noche, 10% azul y celeste) */
+    --azul-histrosoft: #1747C9;
+    --azul-noche: #0B1F44;
+    --celeste-soporte: #3BB3F5;
+    --niebla: #F4F7FB;
+    --gris-pizarra: #5A6478;
+    --blanco: #FFFFFF;
 
-    /* Sand — warm foreground neutrals */
-    --sand-50: #F2EEE6;
-    --sand-200: #D8D3C9;
-    --sand-400: #B5B0A6;
-    --sand-500: #8C877E;
-    --sand-600: #6B675F;
+    /* Superficies */
+    --surface-page: var(--blanco);
+    --surface-sunken: var(--niebla);
+    --surface-raised: var(--blanco);
+    --surface-overlay: var(--niebla);
+    --surface-inverse: var(--azul-noche);
 
-    /* Gold — the brand accent */
-    --gold-300: #FFD36B;
-    --gold-500: #F5B82E;
-    --gold-600: #E0A21A;
-    --gold-ink: #17130A;
-    --gold-soft: #2A2316;
+    /* Texto */
+    --text-primary: var(--azul-noche);
+    --text-secondary: #3D4960;
+    --text-muted: var(--gris-pizarra);
+    --text-faint: #667186;
+    --text-disabled: #9AA3B5;
 
-    /* Semantic */
-    --green-400: #8FD694;
-    --green-soft: #1C2A1D;
-    --amber-400: #F5C860;
-    --amber-soft: #2A2414;
-    --red-400: #F28B82;
-    --red-soft: #2E1B1A;
-    --blue-400: #7CC4FF;
-    --blue-soft: #15222E;
+    /* Bordes */
+    --border-subtle: #E1E8F2;
+    --border-default: #CBD5E5;
+    --border-strong: #A9B6CC;
+    --border-hover: var(--gris-pizarra);
 
-    /* Aliases */
-    --surface-page: var(--night-950);
-    --surface-raised: var(--night-850);
-    --surface-sunken: var(--night-900);
-    --surface-overlay: var(--night-750);
-    --surface-inverse: var(--night-800);
-    --surface-accent: var(--gold-500);
-    --accent-subtle: var(--gold-soft);
+    /* Acento (azul sobre claro, celeste sobre oscuro) */
+    --accent: var(--azul-histrosoft);
+    --accent-hover: #1239A3;
+    --accent-press: #0E2D82;
+    --accent-fg: var(--blanco);
+    --accent-subtle: #EAF0FD;
 
-    --text-primary: var(--sand-50);
-    --text-secondary: var(--sand-200);
-    --text-muted: var(--sand-400);
-    --text-disabled: var(--sand-600);
-    --text-inverse: var(--sand-50);
-    --text-accent: var(--gold-500);
-    --text-link: var(--gold-500);
-    --text-link-hover: var(--gold-300);
+    --contrast-fill: var(--azul-noche);
+    --contrast-fg: var(--blanco);
 
-    --border-subtle: var(--night-700);
-    --border-default: var(--night-600);
-    --border-hover: var(--sand-500);
-    --border-strong: var(--night-500);
+    /* Semánticos */
+    --green: #1E7B3A;
+    --green-soft: #E8F5EC;
+    --amber: #9A6200;
+    --amber-soft: #FEF4DC;
+    --red: #C0352B;
+    --red-soft: #FDECEA;
+    --blue: #1A6FB8;
+    --blue-soft: #E8F2FB;
 
-    --accent: var(--gold-500);
-    --accent-hover: var(--gold-300);
-    --accent-press: var(--gold-600);
-    --accent-fg: var(--gold-ink);
+    /* Sombras */
+    --shadow-1: 0 1px 3px rgba(11, 31, 68, 0.10), 0 1px 2px rgba(11, 31, 68, 0.06);
+    --shadow-2: 0 4px 16px rgba(11, 31, 68, 0.12), 0 2px 4px rgba(11, 31, 68, 0.06);
+    --shadow-3: 0 12px 36px rgba(11, 31, 68, 0.20), 0 4px 12px rgba(11, 31, 68, 0.10);
 
-    --contrast-fill: var(--sand-50);
-    --contrast-fg: var(--night-950);
+    --focus-ring: 0 0 0 3px rgba(23, 71, 201, 0.35);
+  }
 
-    /* Shadows */
-    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.2);
-    --shadow-3: 0 12px 36px rgba(0, 0, 0, 0.65), 0 4px 12px rgba(0, 0, 0, 0.4);
+  /* Secciones oscuras (azul noche): redefinen los tokens para sus hijos */
+  .theme-dark {
+    color-scheme: dark;
 
-    --focus-ring: 0 0 0 3px rgba(245, 184, 46, 0.4);
+    --surface-page: var(--azul-noche);
+    --surface-sunken: #0E2956;
+    --surface-raised: rgba(255, 255, 255, 0.06);
+    --surface-overlay: rgba(255, 255, 255, 0.10);
+    --surface-inverse: var(--azul-noche);
+
+    --text-primary: var(--blanco);
+    --text-secondary: #DCE5F5;
+    --text-muted: #B3C2DE;
+    --text-faint: #8DA0C4;
+    --text-disabled: #6B7FA5;
+
+    --border-subtle: rgba(255, 255, 255, 0.14);
+    --border-default: rgba(255, 255, 255, 0.22);
+    --border-strong: rgba(255, 255, 255, 0.34);
+    --border-hover: #B3C2DE;
+
+    --accent: var(--celeste-soporte);
+    --accent-hover: #7DCDF9;
+    --accent-press: #2A9DE0;
+    --accent-fg: var(--azul-noche);
+    --accent-subtle: rgba(59, 179, 245, 0.14);
+
+    --contrast-fill: var(--blanco);
+    --contrast-fg: var(--azul-noche);
+
+    --green: #8FD694;
+    --green-soft: rgba(143, 214, 148, 0.14);
+    --amber: #F5C860;
+    --amber-soft: rgba(245, 200, 96, 0.14);
+    --red: #F28B82;
+    --red-soft: rgba(242, 139, 130, 0.14);
+    --blue: #7CC4FF;
+    --blue-soft: rgba(124, 196, 255, 0.14);
+
+    --focus-ring: 0 0 0 3px rgba(59, 179, 245, 0.45);
+
+    background-color: var(--surface-page);
+    color: var(--text-primary);
   }
 
   * {
@@ -139,7 +173,7 @@
   }
 
   .font-mono-data {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-variant-numeric: tabular-nums;
   }
 }
@@ -150,14 +184,14 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D0D0F;
+  background: #F4F7FB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2B2B30;
+  background: #CBD5E5;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A4A52;
+  background: #A9B6CC;
 }
 
 /* Animations */
@@ -222,9 +256,9 @@
 
 .card-interactive:hover {
   transform: translateY(-5px);
-  border-color: rgba(245, 184, 46, 0.65);
-  box-shadow: 0 16px 36px -10px rgba(245, 184, 46, 0.15),
-              0 0 0 1px rgba(245, 184, 46, 0.25);
+  border-color: rgba(23, 71, 201, 0.55);
+  box-shadow: 0 16px 36px -10px rgba(11, 31, 68, 0.18),
+              0 0 0 1px rgba(23, 71, 201, 0.18);
 }
 
 /* Image zoom inside cards */
@@ -261,4 +295,70 @@
 
 .btn-shimmer:hover::after {
   transform: translateX(100%) rotate(25deg);
+}
+
+/* Columnas laterales de color (azul noche) con líneas apiladas del logo.
+   Solo aparecen cuando sobra espacio a los lados del contenedor más ancho (1360px + padding).
+   Van fijas al viewport y las líneas se deslizan despacio en dos capas (efecto de profundidad). */
+.edge-lines {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: calc((100vw - 1424px) / 2);
+  pointer-events: none;
+  z-index: 41; /* sobre el navbar (z-40), bajo el carrito flotante y los modales */
+  background-color: #0B1F44;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 640' preserveAspectRatio='none'%3E%3Cg fill='%233BB3F5' fill-opacity='0.55'%3E%3Crect x='0' y='80' width='46' height='12'/%3E%3Crect x='0' y='108' width='78' height='12'/%3E%3Crect x='0' y='136' width='58' height='12'/%3E%3C/g%3E%3Cg fill='%231747C9' fill-opacity='0.9'%3E%3Crect x='0' y='400' width='70' height='12'/%3E%3Crect x='0' y='428' width='38' height='12'/%3E%3Crect x='0' y='456' width='90' height='12'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 960' preserveAspectRatio='none'%3E%3Cg fill='%233BB3F5' fill-opacity='0.22'%3E%3Crect x='0' y='200' width='30' height='6'/%3E%3Crect x='0' y='214' width='54' height='6'/%3E%3Crect x='0' y='600' width='62' height='6'/%3E%3Crect x='0' y='614' width='24' height='6'/%3E%3Crect x='0' y='780' width='44' height='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100% 640px, 100% 960px;
+  background-repeat: repeat-y, repeat-y;
+  animation: edge-drift 56s linear infinite;
+}
+.edge-lines-left { left: 0; }
+.edge-lines-right { right: 0; transform: scaleX(-1); animation-direction: reverse; }
+
+@keyframes edge-drift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 640px, 0 -960px; }
+}
+
+@media (min-width: 1500px) {
+  .edge-lines { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge-lines { animation: none; }
+}
+
+/* Aparición suave al hacer scroll (ver hooks/useScrollReveal) */
+[data-reveal] {
+  opacity: 0;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  animation: reveal-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Líneas del hero: se dibujan de derecha a izquierda al cargar */
+.draw-line {
+  transform-origin: right center;
+  animation: draw-line 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes draw-line {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; }
+  [data-reveal].is-visible, .draw-line { animation: none; }
+  .animate-ambient-glow, .animate-float-gentle, .animate-pulse-subtle { animation: none; }
 }

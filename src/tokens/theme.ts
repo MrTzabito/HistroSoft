@@ -1,34 +1,18 @@
 export const THEME = {
   colors: {
-    night: {
-      950: '#0D0D0F', // page background
-      900: '#121214', // sunken alternate
-      850: '#17171A', // cards / raised
-      800: '#1F1F23', // footer / principles
-      750: '#26262B',
-      700: '#2B2B30', // hairline borders
-      600: '#3A3A40', // default border
-      500: '#4A4A52', // section tops / strong border
-    },
-    sand: {
-      50: '#F2EEE6', // primary text
-      200: '#D8D3C9', // secondary text
-      400: '#B5B0A6', // muted
-      500: '#8C877E', // border hover
-      600: '#6B675F', // disabled
-    },
-    gold: {
-      300: '#FFD36B', // hover
-      500: '#F5B82E', // brand accent
-      600: '#E0A21A', // active/pressed
-      ink: '#17130A', // text on gold
-      soft: '#2A2316', // gold subtle tint
+    brand: {
+      azulHistrosoft: '#1747C9', // principal: botones, enlaces, acentos
+      azulNoche: '#0B1F44', // textos principales, footer, secciones oscuras
+      celesteSoporte: '#3BB3F5', // acentos sobre fondo oscuro (nunca texto sobre blanco)
+      niebla: '#F4F7FB', // fondos claros alternos
+      grisPizarra: '#5A6478', // textos secundarios
+      blanco: '#FFFFFF',
     },
     semantic: {
-      green: '#8FD694',
-      amber: '#F5C860',
-      red: '#F28B82',
-      blue: '#7CC4FF',
+      green: '#1E7B3A',
+      amber: '#9A6200',
+      red: '#C0352B',
+      blue: '#1A6FB8',
     }
   },
   layout: {

@@ -30,22 +30,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantClasses = {
       primary:
-        'bg-[#F5B82E] text-[#17130A] hover:bg-[#FFD36B] active:bg-[#E0A21A] active:translate-y-px shadow-sm',
+        'bg-[color:var(--accent)] text-[color:var(--accent-fg)] hover:bg-[color:var(--accent-hover)] active:bg-[color:var(--accent-press)] active:translate-y-px shadow-sm',
       secondary:
-        'border border-[#2B2B30] text-[#F2EEE6] bg-transparent hover:bg-[#F2EEE6] hover:text-[#0D0D0F] hover:border-[#F2EEE6] active:translate-y-px',
+        'border border-[color:var(--border-subtle)] text-[color:var(--text-primary)] bg-transparent hover:bg-[color:var(--contrast-fill)] hover:text-[color:var(--contrast-fg)] hover:border-[color:var(--contrast-fill)] active:translate-y-px',
       ghost:
-        'text-[#F2EEE6] bg-transparent hover:bg-[#17171A] hover:text-[#FFD36B] active:translate-y-px',
+        'text-[color:var(--text-primary)] bg-transparent hover:bg-[color:var(--surface-raised)] hover:text-[color:var(--accent-hover)] active:translate-y-px',
       link:
-        'text-[#F5B82E] hover:text-[#FFD36B] bg-transparent p-0 h-auto underline-offset-4 hover:underline',
+        'text-[color:var(--accent)] hover:text-[color:var(--accent-hover)] bg-transparent p-0 h-auto underline-offset-4 hover:underline',
       destructive:
-        'bg-[#2E1B1A] border border-[#F28B82]/40 text-[#F28B82] hover:bg-[#F28B82] hover:text-[#17130A]',
+        'bg-[color:var(--red-soft)] border border-[color:var(--red)]/40 text-[color:var(--red)] hover:bg-[color:var(--red)] hover:text-[color:var(--accent-fg)]',
     };
 
     return (
       <button
         ref={ref}
         disabled={disabled}
-        className={`inline-flex items-center justify-center rounded-full font-sans tracking-tight transition-all duration-150 ease-out select-none whitespace-nowrap cursor-pointer disabled:opacity-45 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0F] ${
+        className={`inline-flex items-center justify-center rounded-full font-sans tracking-tight transition-all duration-150 ease-out select-none whitespace-nowrap cursor-pointer disabled:opacity-45 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-page)] ${
           sizeClasses[size]
         } ${variantClasses[variant]} ${className}`}
         {...props}

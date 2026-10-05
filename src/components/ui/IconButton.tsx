@@ -22,15 +22,15 @@ export const IconButton: React.FC<IconButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: 'bg-[#F5B82E] text-[#17130A] hover:bg-[#FFD36B]',
-    secondary: 'border border-[#2B2B30] text-[#F2EEE6] bg-[#17171A] hover:border-[#8C877E] hover:text-[#F5B82E]',
-    ghost: 'text-[#B5B0A6] hover:text-[#F2EEE6] hover:bg-[#1F1F23]',
+    primary: 'bg-[color:var(--accent)] text-[color:var(--accent-fg)] hover:bg-[color:var(--accent-hover)]',
+    secondary: 'border border-[color:var(--border-subtle)] text-[color:var(--text-primary)] bg-[color:var(--surface-raised)] hover:border-[color:var(--border-hover)] hover:text-[color:var(--accent)]',
+    ghost: 'text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--surface-inverse)]',
   };
 
   return (
     <button
       aria-label={ariaLabel}
-      className={`inline-flex items-center justify-center rounded-full transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0F] active:translate-y-px ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-full transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-page)] active:translate-y-px ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
       {...props}
     >
       {children}

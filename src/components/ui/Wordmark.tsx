@@ -3,32 +3,35 @@ import React from 'react';
 interface WordmarkProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  /** 'dark' = logo blanco para fondos oscuros; 'light' = logo a color para fondos claros */
+  tone?: 'light' | 'dark';
   onClick?: () => void;
 }
+
+// Ancho mínimo del logo: 120 px (alto 28 px => ~123 px de ancho con proporción 441:100)
+const sizeClasses = {
+  sm: 'h-7',
+  md: 'h-8',
+  lg: 'h-10',
+};
 
 export const Wordmark: React.FC<WordmarkProps> = ({
   className = '',
   size = 'md',
+  tone = 'light',
   onClick,
 }) => {
-  const sizeClasses = {
-    sm: 'text-lg',
-    md: 'text-xl',
-    lg: 'text-2xl',
-  };
+  const src = tone === 'dark'
+    ? '/histrosoft-logo-horizontal-blanco.svg'
+    : '/histrosoft-logo-horizontal.svg';
 
   return (
-    <div
+    <img
+      src={src}
+      alt="HistroSoft"
       onClick={onClick}
-      className={`inline-flex items-center tracking-tight select-none ${onClick ? 'cursor-pointer' : ''} ${className}`}
-    >
-      <span className={`font-sans font-medium text-[#F2EEE6] ${sizeClasses[size]}`}>
-        Histro
-      </span>
-      <span className={`font-sans font-light text-[#D8D3C9] ${sizeClasses[size]}`}>
-        Soft
-      </span>
-      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F5B82E] ml-1 self-baseline mb-1" />
-    </div>
+      draggable={false}
+      className={`block w-auto select-none ${sizeClasses[size]} ${onClick ? 'cursor-pointer' : ''} ${className}`}
+    />
   );
 };

@@ -31,25 +31,25 @@ export const ProductDemoModal: React.FC<ProductDemoModalProps> = ({
     >
       <div className="space-y-6 text-left">
         {/* Mock/Simulated Video Player Window */}
-        <div className="relative aspect-video rounded-[16px] bg-[#0D0D0F] border border-[#2B2B30] overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
-          <div className="absolute inset-0 bg-radial from-[#F5B82E]/10 via-transparent to-black/60 pointer-events-none" />
+        <div className="relative aspect-video rounded-[16px] bg-[color:var(--surface-page)] border border-[color:var(--border-subtle)] overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
+          <div className="absolute inset-0 bg-radial from-[color:var(--accent)]/10 via-transparent to-[color:var(--azul-noche)]/60 pointer-events-none" />
 
           {/* Video simulation badge */}
           <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#8FD694] animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-[#D8D3C9] bg-[#17171A]/80 px-2 py-0.5 rounded-full border border-[#2B2B30]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[color:var(--green)] animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[color:var(--text-secondary)] bg-[color:var(--surface-raised)]/80 px-2 py-0.5 rounded-full border border-[color:var(--border-subtle)]">
               Vista previa interactiva · HistroSoft 2026
             </span>
           </div>
 
-          <div className="w-16 h-16 rounded-full bg-[#F5B82E] text-[#17130A] flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-105 mb-4">
+          <div className="w-16 h-16 rounded-full bg-[color:var(--accent)] text-[color:var(--accent-fg)] flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-105 mb-4">
             <Play className="w-7 h-7 fill-current ml-1" />
           </div>
 
-          <h4 className="font-display font-bold text-lg text-[#F2EEE6] relative z-10 max-w-sm">
+          <h4 className="font-display font-bold text-lg text-[color:var(--text-primary)] relative z-10 max-w-sm">
             Recorrido guiado de {product.name}
           </h4>
-          <p className="text-xs text-[#8C877E] relative z-10 mt-1 max-w-md">
+          <p className="text-xs text-[color:var(--text-faint)] relative z-10 mt-1 max-w-md">
             Visualiza cómo interactúan los usuarios, el flujo de datos en tiempo real y la emisión automática de reportes.
           </p>
         </div>
@@ -57,16 +57,16 @@ export const ProductDemoModal: React.FC<ProductDemoModalProps> = ({
         {/* Highlights list */}
         {product.demoHighlights && product.demoHighlights.length > 0 && (
           <div className="space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#F5B82E] block">
+            <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--accent)] block">
               Funcionalidades clave que verás en este sistema:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {product.demoHighlights.map((hl, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs text-[#D8D3C9] bg-[#121214] p-3 rounded-[12px] border border-[#2B2B30]"
+                  className="flex items-start gap-2.5 text-xs text-[color:var(--text-secondary)] bg-[color:var(--surface-sunken)] p-3 rounded-[12px] border border-[color:var(--border-subtle)]"
                 >
-                  <Check className="w-3.5 h-3.5 text-[#F5B82E] shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[color:var(--accent)] shrink-0 mt-0.5" />
                   <span>{hl}</span>
                 </div>
               ))}
@@ -75,8 +75,8 @@ export const ProductDemoModal: React.FC<ProductDemoModalProps> = ({
         )}
 
         {/* Action bar */}
-        <div className="pt-4 border-t border-[#2B2B30] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs text-[#8FD694]">
+        <div className="pt-4 border-t border-[color:var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-xs text-[color:var(--green)]">
             <ShieldCheck className="w-4 h-4" />
             <span>Infraestructura lista y puesta en marcha en 48 horas</span>
           </div>

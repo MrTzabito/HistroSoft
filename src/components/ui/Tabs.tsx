@@ -23,7 +23,7 @@ export const Tabs: React.FC<TabsProps> = ({
 }) => {
   return (
     <div
-      className={`inline-flex items-center p-1 bg-[#17171A] border border-[#2B2B30] rounded-full overflow-x-auto max-w-full ${className}`}
+      className={`inline-flex items-center p-1 bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-full overflow-x-auto max-w-full ${className}`}
       role="tablist"
     >
       {items.map((tab) => {
@@ -38,8 +38,8 @@ export const Tabs: React.FC<TabsProps> = ({
               size === 'sm' ? 'px-3.5 py-1.5 text-xs' : 'px-5 py-2 text-xs md:text-sm'
             } ${
               isActive
-                ? 'bg-[#F2EEE6] text-[#0D0D0F] font-bold shadow-[0_1px_3px_rgba(0,0,0,0.4)]'
-                : 'text-[#B5B0A6] hover:text-[#F2EEE6] font-medium'
+                ? 'bg-[color:var(--contrast-fill)] text-[color:var(--contrast-fg)] font-bold shadow-[0_1px_3px_rgba(11,31,68,0.18)]'
+                : 'text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] font-medium'
             }`}
           >
             <span>{tab.label}</span>
@@ -47,8 +47,8 @@ export const Tabs: React.FC<TabsProps> = ({
               <span
                 className={`text-[10px] px-1.5 py-0.5 rounded-full uppercase font-mono ${
                   isActive
-                    ? 'bg-[#0D0D0F] text-[#F2EEE6]'
-                    : 'bg-[#2B2B30] text-[#8C877E]'
+                    ? 'bg-[color:var(--surface-page)] text-[color:var(--text-primary)]'
+                    : 'bg-[color:var(--border-subtle)] text-[color:var(--text-faint)]'
                 }`}
               >
                 {tab.badge}

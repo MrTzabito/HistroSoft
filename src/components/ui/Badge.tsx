@@ -12,11 +12,11 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
 }) => {
   const variantStyles = {
-    gold: 'bg-[#2A2316] text-[#F5B82E] border-[#F5B82E]/30',
-    default: 'bg-[#1F1F23] text-[#D8D3C9] border-[#2B2B30]',
-    success: 'bg-[#1C2A1D] text-[#8FD694] border-[#8FD694]/30',
-    warning: 'bg-[#2A2414] text-[#F5C860] border-[#F5C860]/30',
-    info: 'bg-[#15222E] text-[#7CC4FF] border-[#7CC4FF]/30',
+    gold: 'bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border-[color:var(--accent)]/30',
+    default: 'bg-[color:var(--surface-inverse)] text-[color:var(--text-secondary)] border-[color:var(--border-subtle)]',
+    success: 'bg-[color:var(--green-soft)] text-[color:var(--green)] border-[color:var(--green)]/30',
+    warning: 'bg-[color:var(--amber-soft)] text-[color:var(--amber)] border-[color:var(--amber)]/30',
+    info: 'bg-[color:var(--blue-soft)] text-[color:var(--blue)] border-[color:var(--blue)]/30',
   };
 
   return (

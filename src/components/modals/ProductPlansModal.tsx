@@ -39,15 +39,15 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
     >
       <div className="space-y-6 text-left">
         {/* Billing cycle switch */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#2B2B30]">
-          <span className="text-xs text-[#8C877E]">
+        <div className="flex items-center justify-between pb-4 border-b border-[color:var(--border-subtle)]">
+          <span className="text-xs text-[color:var(--text-faint)]">
             Selecciona el plan que mejor se ajuste a la escala de tu empresa:
           </span>
 
-          <div className="flex items-center gap-3 bg-[#121214] px-4 py-1.5 rounded-full border border-[#2B2B30]">
+          <div className="flex items-center gap-3 bg-[color:var(--surface-sunken)] px-4 py-1.5 rounded-full border border-[color:var(--border-subtle)]">
             <span
               className={`text-xs font-semibold ${
-                billingCycle === 'monthly' ? 'text-[#F2EEE6]' : 'text-[#8C877E]'
+                billingCycle === 'monthly' ? 'text-[color:var(--text-primary)]' : 'text-[color:var(--text-faint)]'
               }`}
             >
               Mensual
@@ -59,12 +59,12 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
             <div className="flex items-center gap-1.5">
               <span
                 className={`text-xs font-semibold ${
-                  billingCycle === 'annual' ? 'text-[#F2EEE6]' : 'text-[#8C877E]'
+                  billingCycle === 'annual' ? 'text-[color:var(--text-primary)]' : 'text-[color:var(--text-faint)]'
                 }`}
               >
                 Anual
               </span>
-              <span className="text-[10px] font-mono font-bold text-[#8FD694] bg-[#1C2A1D] px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-mono font-bold text-[color:var(--green)] bg-[color:var(--green-soft)] px-2 py-0.5 rounded-full">
                 -20%
               </span>
             </div>
@@ -82,45 +82,45 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
             return (
               <div
                 key={plan.id}
-                className={`p-5 rounded-[18px] bg-[#121214] flex flex-col justify-between transition-all duration-150 ${
+                className={`p-5 rounded-[18px] bg-[color:var(--surface-sunken)] flex flex-col justify-between transition-all duration-150 ${
                   plan.isPopular
-                    ? 'border-2 border-[#F5B82E]'
-                    : 'border border-[#2B2B30] hover:border-[#4A4A52]'
+                    ? 'border-2 border-[color:var(--accent)]'
+                    : 'border border-[color:var(--border-subtle)] hover:border-[color:var(--border-strong)]'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <h4 className="font-display font-bold text-lg text-[#F2EEE6]">
+                    <h4 className="font-display font-bold text-lg text-[color:var(--text-primary)]">
                       {plan.name}
                     </h4>
-                    <span className="font-mono text-[10px] text-[#8FD694] bg-[#1C2A1D] px-2 py-0.5 rounded-full">
+                    <span className="font-mono text-[10px] text-[color:var(--green)] bg-[color:var(--green-soft)] px-2 py-0.5 rounded-full">
                       {plan.sla}
                     </span>
                   </div>
 
-                  <p className="text-[11px] text-[#8C877E] leading-normal mb-4">
+                  <p className="text-[11px] text-[color:var(--text-faint)] leading-normal mb-4">
                     {plan.tagline}
                   </p>
 
-                  <div className="py-3 border-y border-[#2B2B30] mb-4">
+                  <div className="py-3 border-y border-[color:var(--border-subtle)] mb-4">
                     {price === 0 ? (
                       <div>
-                        <span className="font-mono font-bold text-xl text-[#F5B82E]">
+                        <span className="font-mono font-bold text-xl text-[color:var(--accent)]">
                           A cotizar
                         </span>
-                        <span className="text-[10px] text-[#8C877E] block">
+                        <span className="text-[10px] text-[color:var(--text-faint)] block">
                           Según alcance cerrado
                         </span>
                       </div>
                     ) : (
                       <div className="flex items-baseline gap-1">
-                        <span className="font-mono font-bold text-2xl text-[#F2EEE6]">
+                        <span className="font-mono font-bold text-2xl text-[color:var(--text-primary)]">
                           S/ {price.toFixed(2)}
                         </span>
-                        <span className="text-[11px] text-[#8C877E]">/ mes</span>
+                        <span className="text-[11px] text-[color:var(--text-faint)]">/ mes</span>
                       </div>
                     )}
-                    <span className="text-[10px] text-[#8C877E] block mt-0.5 font-mono">
+                    <span className="text-[10px] text-[color:var(--text-faint)] block mt-0.5 font-mono">
                       {plan.limits}
                     </span>
                   </div>
@@ -129,9 +129,9 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
                     {plan.features.map((feat, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-xs text-[#D8D3C9]"
+                        className="flex items-start gap-2 text-xs text-[color:var(--text-secondary)]"
                       >
-                        <Check className="w-3.5 h-3.5 text-[#F5B82E] shrink-0 mt-0.5" />
+                        <Check className="w-3.5 h-3.5 text-[color:var(--accent)] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -153,7 +153,7 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
         </div>
 
         {/* Custom adaptation footer note */}
-        <div className="p-4 rounded-[14px] bg-[#17171A] border border-[#2B2B30] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#B5B0A6]">
+        <div className="p-4 rounded-[14px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[color:var(--text-muted)]">
           <span>
             ¿Necesitas que {product.name} tenga un módulo o conexión a la medida de tu empresa?
           </span>
@@ -163,7 +163,7 @@ export const ProductPlansModal: React.FC<ProductPlansModalProps> = ({
               onClose();
               onConsultCustom(product.name);
             }}
-            className="text-xs font-bold text-[#F5B82E] hover:text-[#FFD36B] whitespace-nowrap cursor-pointer underline"
+            className="text-xs font-bold text-[color:var(--accent)] hover:text-[color:var(--accent-hover)] whitespace-nowrap cursor-pointer underline"
           >
             Consultar software personalizado →
           </button>

@@ -44,32 +44,32 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           <div
             key={toast.id}
             role="status"
-            className="pointer-events-auto flex items-start gap-3 p-4 rounded-[16px] bg-[#1F1F23] border border-[#2B2B30] text-[#F2EEE6] shadow-[0_4px_16px_rgba(0,0,0,0.5),0_2px_4px_rgba(0,0,0,0.2)] animate-in fade-in slide-in-from-bottom-3 duration-200"
+            className="theme-dark pointer-events-auto flex items-start gap-3 p-4 rounded-[16px] bg-[color:var(--surface-inverse)] border border-[color:var(--border-subtle)] text-[color:var(--text-primary)] shadow-[0_4px_16px_rgba(11,31,68,0.2),0_2px_4px_rgba(11,31,68,0.1)] animate-in fade-in slide-in-from-bottom-3 duration-200"
           >
             <div className="mt-0.5 shrink-0">
               {toast.type === 'success' && (
-                <CheckCircle2 className="w-4 h-4 text-[#8FD694]" />
+                <CheckCircle2 className="w-4 h-4 text-[color:var(--green)]" />
               )}
               {toast.type === 'error' && (
-                <AlertCircle className="w-4 h-4 text-[#F28B82]" />
+                <AlertCircle className="w-4 h-4 text-[color:var(--red)]" />
               )}
               {toast.type === 'info' && (
-                <Info className="w-4 h-4 text-[#F5B82E]" />
+                <Info className="w-4 h-4 text-[color:var(--accent)]" />
               )}
             </div>
             <div className="flex-1 text-left">
-              <p className="text-xs font-semibold text-[#F2EEE6] leading-tight">
+              <p className="text-xs font-semibold text-[color:var(--text-primary)] leading-tight">
                 {toast.title}
               </p>
               {toast.description && (
-                <p className="text-[12px] text-[#B5B0A6] mt-1 leading-normal">
+                <p className="text-[12px] text-[color:var(--text-muted)] mt-1 leading-normal">
                   {toast.description}
                 </p>
               )}
             </div>
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-[#8C877E] hover:text-[#F2EEE6] shrink-0 cursor-pointer p-0.5"
+              className="text-[color:var(--text-faint)] hover:text-[color:var(--text-primary)] shrink-0 cursor-pointer p-0.5"
               aria-label="Cerrar notificación"
             >
               <X className="w-3.5 h-3.5" />

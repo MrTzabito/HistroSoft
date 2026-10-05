@@ -97,7 +97,7 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
   };
 
   return (
-    <section id="calculadora" className="py-20 md:py-28 border-b border-[#2B2B30] bg-[#121214]">
+    <section id="calculadora" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -107,11 +107,11 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Controls: Left 7 cols */}
-          <div className="lg:col-span-7 space-y-8 bg-[#17171A] p-6 sm:p-8 rounded-[22px] border border-[#2B2B30]">
+          <div className="lg:col-span-7 space-y-8 bg-[color:var(--surface-raised)] p-6 sm:p-8 rounded-[22px] border border-[color:var(--border-subtle)]">
             {/* 1. Tipo de desarrollo */}
             <div className="space-y-3">
-              <label className="text-xs font-bold uppercase tracking-wider text-[#F2EEE6] flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#2A2316] text-[#F5B82E] text-[11px] font-mono flex items-center justify-center">
+              <label className="text-xs font-bold uppercase tracking-wider text-[color:var(--text-primary)] flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-[color:var(--accent-subtle)] text-[color:var(--accent)] text-[11px] font-mono flex items-center justify-center">
                   1
                 </span>
                 Tipo de sistema requerido:
@@ -129,8 +129,8 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
                     onClick={() => setProjectType(item.id)}
                     className={`p-3 text-left rounded-[12px] text-xs font-semibold border transition-all cursor-pointer ${
                       projectType === item.id
-                        ? 'bg-[#2A2316] text-[#F5B82E] border-[#F5B82E]'
-                        : 'bg-[#121214] text-[#D8D3C9] border-[#2B2B30] hover:border-[#4A4A52]'
+                        ? 'bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border-[color:var(--accent)]'
+                        : 'bg-[color:var(--surface-sunken)] text-[color:var(--text-secondary)] border-[color:var(--border-subtle)] hover:border-[color:var(--border-strong)]'
                     }`}
                   >
                     {item.label}
@@ -141,8 +141,8 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
 
             {/* 2. Alcance / Complejidad */}
             <div className="space-y-3">
-              <label className="text-xs font-bold uppercase tracking-wider text-[#F2EEE6] flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#2A2316] text-[#F5B82E] text-[11px] font-mono flex items-center justify-center">
+              <label className="text-xs font-bold uppercase tracking-wider text-[color:var(--text-primary)] flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-[color:var(--accent-subtle)] text-[color:var(--accent)] text-[11px] font-mono flex items-center justify-center">
                   2
                 </span>
                 Complejidad y cobertura de áreas:
@@ -158,12 +158,12 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
                     onClick={() => setScope(item.id)}
                     className={`p-3.5 text-left rounded-[12px] border transition-all cursor-pointer ${
                       scope === item.id
-                        ? 'bg-[#2A2316] text-[#F5B82E] border-[#F5B82E]'
-                        : 'bg-[#121214] text-[#D8D3C9] border-[#2B2B30] hover:border-[#4A4A52]'
+                        ? 'bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border-[color:var(--accent)]'
+                        : 'bg-[color:var(--surface-sunken)] text-[color:var(--text-secondary)] border-[color:var(--border-subtle)] hover:border-[color:var(--border-strong)]'
                     }`}
                   >
                     <div className="text-xs font-bold">{item.title}</div>
-                    <div className="text-[11px] text-[#8C877E] mt-0.5">{item.sub}</div>
+                    <div className="text-[11px] text-[color:var(--text-faint)] mt-0.5">{item.sub}</div>
                   </button>
                 ))}
               </div>
@@ -171,8 +171,8 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
 
             {/* 3. Integraciones */}
             <div className="space-y-3">
-              <label className="text-xs font-bold uppercase tracking-wider text-[#F2EEE6] flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#2A2316] text-[#F5B82E] text-[11px] font-mono flex items-center justify-center">
+              <label className="text-xs font-bold uppercase tracking-wider text-[color:var(--text-primary)] flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-[color:var(--accent-subtle)] text-[color:var(--accent)] text-[11px] font-mono flex items-center justify-center">
                   3
                 </span>
                 Integraciones requeridas:
@@ -192,15 +192,15 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
                       onClick={() => toggleIntegration(integ.id)}
                       className={`flex items-center gap-3 p-3 rounded-[12px] border text-xs cursor-pointer select-none transition-colors ${
                         isChecked
-                          ? 'bg-[#121214] text-[#F2EEE6] border-[#F5B82E]/50'
-                          : 'bg-[#121214] text-[#B5B0A6] border-[#2B2B30] hover:border-[#4A4A52]'
+                          ? 'bg-[color:var(--surface-sunken)] text-[color:var(--text-primary)] border-[color:var(--accent)]/50'
+                          : 'bg-[color:var(--surface-sunken)] text-[color:var(--text-muted)] border-[color:var(--border-subtle)] hover:border-[color:var(--border-strong)]'
                       }`}
                     >
                       <div
                         className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 ${
                           isChecked
-                            ? 'bg-[#F5B82E] border-[#F5B82E] text-[#17130A]'
-                            : 'border-[#4A4A52]'
+                            ? 'bg-[color:var(--accent)] border-[color:var(--accent)] text-[color:var(--accent-fg)]'
+                            : 'border-[color:var(--border-strong)]'
                         }`}
                       >
                         {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
@@ -214,39 +214,39 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
           </div>
 
           {/* Results Card: Right 5 cols */}
-          <div className="lg:col-span-5 bg-[#17171A] border-2 border-[#F5B82E] rounded-[22px] p-6 sm:p-8 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-[#2B2B30]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F5B82E]">
+          <div className="lg:col-span-5 bg-[color:var(--surface-raised)] border-2 border-[color:var(--accent)] rounded-[22px] p-6 sm:p-8 space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-[color:var(--border-subtle)]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]">
                 Estimación de ingeniería
               </span>
-              <span className="font-mono text-xs text-[#8FD694] bg-[#1C2A1D] px-2.5 py-0.5 rounded-full border border-[#8FD694]/20">
+              <span className="font-mono text-xs text-[color:var(--green)] bg-[color:var(--green-soft)] px-2.5 py-0.5 rounded-full border border-[color:var(--green)]/20">
                 Alcance cerrado
               </span>
             </div>
 
             {/* Estimated Timeline */}
             <div className="space-y-1">
-              <span className="text-xs text-[#8C877E] uppercase tracking-wider font-semibold">
+              <span className="text-xs text-[color:var(--text-faint)] uppercase tracking-wider font-semibold">
                 Plazo de desarrollo estimado:
               </span>
-              <div className="font-mono font-bold text-3xl text-[#F2EEE6] tracking-tight">
+              <div className="font-mono font-bold text-3xl text-[color:var(--text-primary)] tracking-tight">
                 {estimate.weeksText}
               </div>
-              <p className="text-xs text-[#B5B0A6] pt-1">
+              <p className="text-xs text-[color:var(--text-muted)] pt-1">
                 Dividido en {estimate.sprints} sprints funcionales de 2 semanas cada uno con demostración en staging.
               </p>
             </div>
 
             {/* Recommended stack */}
-            <div className="space-y-2 pt-4 border-t border-[#2B2B30]">
-              <span className="text-xs text-[#8C877E] uppercase tracking-wider font-semibold">
+            <div className="space-y-2 pt-4 border-t border-[color:var(--border-subtle)]">
+              <span className="text-xs text-[color:var(--text-faint)] uppercase tracking-wider font-semibold">
                 Arquitectura sugerida:
               </span>
               <div className="flex flex-wrap gap-2">
                 {estimate.stack.map((item) => (
                   <span
                     key={item}
-                    className="font-mono text-xs px-2.5 py-1 rounded-full bg-[#121214] text-[#F2EEE6] border border-[#2B2B30]"
+                    className="font-mono text-xs px-2.5 py-1 rounded-full bg-[color:var(--surface-sunken)] text-[color:var(--text-primary)] border border-[color:var(--border-subtle)]"
                   >
                     {item}
                   </span>
@@ -255,17 +255,17 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
             </div>
 
             {/* Scope guarantees */}
-            <div className="space-y-2 pt-4 border-t border-[#2B2B30] text-xs text-[#D8D3C9]">
+            <div className="space-y-2 pt-4 border-t border-[color:var(--border-subtle)] text-xs text-[color:var(--text-secondary)]">
               <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-[#F5B82E]" />
+                <Check className="w-3.5 h-3.5 text-[color:var(--accent)]" />
                 <span>90 días de garantía técnica post-entrega</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-[#F5B82E]" />
+                <Check className="w-3.5 h-3.5 text-[color:var(--accent)]" />
                 <span>Propiedad total del repositorio y modelos de datos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-[#F5B82E]" />
+                <Check className="w-3.5 h-3.5 text-[color:var(--accent)]" />
                 <span>Presupuesto fijo sin cargos imprevistos</span>
               </div>
             </div>

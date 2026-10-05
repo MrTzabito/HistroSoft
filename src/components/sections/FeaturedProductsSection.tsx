@@ -32,7 +32,7 @@ export const FeaturedProductsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 border-b border-[#2B2B30] bg-[#0D0D0F] relative">
+    <section className="py-20 md:py-28 bg-[color:var(--surface-sunken)] relative">
       <Container>
         <SectionHeader
           title="Nuestros productos más adquiridos."
@@ -41,15 +41,17 @@ export const FeaturedProductsSection: React.FC = () => {
 
         {/* Featured Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {featuredProducts.map((product) => (
+          {featuredProducts.map((product, index) => (
             <div
               key={product.id}
-              className="flex flex-col justify-between rounded-[22px] bg-[#17171A] border border-[#2B2B30] p-6 hover:border-[#F5B82E]/40 transition-colors group"
+              data-reveal
+              style={{ '--reveal-delay': `${index * 100}ms` } as React.CSSProperties}
+              className="flex flex-col justify-between rounded-[22px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] shadow-sm p-6 card-interactive group"
             >
               <div>
                 {/* Image Preview */}
                 {product.imageUrl && (
-                  <div className="relative aspect-video w-full rounded-[14px] overflow-hidden bg-[#121214] border border-[#2B2B30] mb-4 group-hover:border-[#F5B82E]/40 transition-colors">
+                  <div className="relative aspect-video w-full rounded-[14px] overflow-hidden bg-[color:var(--surface-sunken)] border border-[color:var(--border-subtle)] mb-4 group-hover:border-[color:var(--accent)]/40 transition-colors">
                     <img
                       src={product.imageUrl}
                       alt={product.name}
@@ -64,8 +66,8 @@ export const FeaturedProductsSection: React.FC = () => {
                     <span
                       className={`text-[10px] font-sans font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full inline-block transition-transform duration-200 group-hover:scale-105 ${
                         product.badge === 'Más vendido'
-                          ? 'bg-[#2A2316] text-[#F5B82E] border border-[#F5B82E]/30'
-                          : 'bg-[#1C2A1D] text-[#8FD694] border border-[#8FD694]/30'
+                          ? 'bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border border-[color:var(--accent)]/30'
+                          : 'bg-[color:var(--green-soft)] text-[color:var(--green)] border border-[color:var(--green)]/30'
                       }`}
                     >
                       {product.badge}
@@ -74,30 +76,30 @@ export const FeaturedProductsSection: React.FC = () => {
                 )}
 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-semibold text-[#F2EEE6] mb-2">
+                <h3 className="text-lg md:text-xl font-semibold text-[color:var(--text-primary)] mb-2">
                   {product.name}
                 </h3>
 
                 {/* Tagline */}
-                <p className="text-sm text-[#B5B0A6] mb-4">
+                <p className="text-sm text-[color:var(--text-muted)] mb-4">
                   {product.tagline}
                 </p>
 
                 {/* Summary */}
-                <p className="text-xs text-[#8C877E] leading-relaxed mb-6">
+                <p className="text-xs text-[color:var(--text-faint)] leading-relaxed mb-6">
                   {product.summary.substring(0, 120)}...
                 </p>
               </div>
 
               {/* Price & Actions */}
               <div>
-                <div className="mb-4 pb-4 border-t border-[#2B2B30]">
-                  <p className="text-xs text-[#8C877E] mb-1">Desde</p>
+                <div className="mb-4 pb-4 border-t border-[color:var(--border-subtle)]">
+                  <p className="text-xs text-[color:var(--text-faint)] mb-1">Desde</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-[#F2EEE6]">
+                    <span className="text-2xl font-bold text-[color:var(--text-primary)]">
                       S/ {product.priceMonthlyPEN}
                     </span>
-                    <span className="text-xs text-[#8C877E]">
+                    <span className="text-xs text-[color:var(--text-faint)]">
                       ${product.priceMonthlyUSD}/mes
                     </span>
                   </div>
@@ -106,7 +108,7 @@ export const FeaturedProductsSection: React.FC = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleAddToCart(product.id)}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full bg-[#2A2316] text-[#F5B82E] border border-[#F5B82E]/30 hover:bg-[#F5B82E] hover:text-[#17130A] transition-colors text-sm font-semibold cursor-pointer"
+                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border border-[color:var(--accent)]/30 hover:bg-[color:var(--accent)] hover:text-[color:var(--accent-fg)] transition-colors text-sm font-semibold cursor-pointer"
                   >
                     <ShoppingCart className="w-4 h-4" />
                     <span>Agregar</span>
@@ -118,7 +120,7 @@ export const FeaturedProductsSection: React.FC = () => {
         </div>
 
         {/* CTA to view all products */}
-        <div className="flex justify-center">
+        <div data-reveal className="flex justify-center">
           <Button
             variant="secondary"
             size="md"

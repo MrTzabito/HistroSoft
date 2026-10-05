@@ -34,38 +34,38 @@ export const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className="w-full border-t border-[#2B2B30]">
+    <div className="w-full border-t border-[color:var(--border-subtle)]">
       {items.map((item) => {
         const isOpen = openIds.includes(item.id);
         return (
           <div
             key={item.id}
-            className="border-b border-[#2B2B30] transition-colors"
+            className="border-b border-[color:var(--border-subtle)] transition-colors"
           >
             <button
               onClick={() => toggle(item.id)}
-              className="w-full py-5 text-left flex items-start justify-between gap-4 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B82E]"
+              className="w-full py-5 text-left flex items-start justify-between gap-4 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
             >
               <div className="flex-1 pr-4">
                 {item.category && (
-                  <span className="block text-[11px] font-sans font-extrabold uppercase tracking-[0.16em] text-[#F5B82E] mb-1">
+                  <span className="block text-[11px] font-sans font-bold uppercase tracking-[0.16em] text-[color:var(--accent)] mb-1">
                     {item.category}
                   </span>
                 )}
-                <span className="font-sans font-semibold text-base md:text-lg text-[#F2EEE6] group-hover:text-[#FFD36B] transition-colors">
+                <span className="font-sans font-semibold text-base md:text-lg text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-hover)] transition-colors">
                   {item.title}
                 </span>
               </div>
               <span
-                className={`mt-1 w-6 h-6 rounded-full border border-[#2B2B30] flex items-center justify-center shrink-0 text-[#8C877E] group-hover:border-[#F5B82E] group-hover:text-[#F5B82E] transition-all duration-200 ${
-                  isOpen ? 'rotate-180 bg-[#2A2316] text-[#F5B82E] border-[#F5B82E]/40' : ''
+                className={`mt-1 w-6 h-6 rounded-full border border-[color:var(--border-subtle)] flex items-center justify-center shrink-0 text-[color:var(--text-faint)] group-hover:border-[color:var(--accent)] group-hover:text-[color:var(--accent)] transition-all duration-200 ${
+                  isOpen ? 'rotate-180 bg-[color:var(--accent-subtle)] text-[color:var(--accent)] border-[color:var(--accent)]/40' : ''
                 }`}
               >
                 <ChevronDown className="w-3.5 h-3.5" />
               </span>
             </button>
             {isOpen && (
-              <div className="pb-6 pt-1 text-sm md:text-base text-[#B5B0A6] leading-relaxed max-w-3xl animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="pb-6 pt-1 text-sm md:text-base text-[color:var(--text-muted)] leading-relaxed max-w-3xl animate-in fade-in slide-in-from-top-2 duration-200">
                 {item.content}
               </div>
             )}
