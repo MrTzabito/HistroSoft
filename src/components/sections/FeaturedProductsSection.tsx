@@ -114,18 +114,6 @@ export const FeaturedProductsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA to view all products */}
-        <div data-reveal className="flex justify-center">
-          <Button
-            variant="secondary"
-            size="lg"
-            onClick={handleViewAllProducts}
-            className="gap-3 group w-80 hover:shadow-lg hover:border-[color:var(--accent)] hover:bg-[color:var(--accent-subtle)] transition-all duration-300"
-          >
-            Ver todos los productos
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 group-hover:text-[color:var(--accent)] transition-all duration-300" />
-          </Button>
-        </div>
       </Container>
     </section>
   );
