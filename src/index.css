@@ -388,9 +388,9 @@
   .skeleton { animation: none; }
 }
 
-/* Scrollbar personalizada: se camufla con edge-lines en pantalla ancha */
+/* Scrollbar personalizada: visible solo cuando se hace scroll */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -398,20 +398,21 @@
 ::-webkit-scrollbar-thumb {
   background: var(--azul-noche);
   border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--celeste-soporte);
+}
+
+/* Mostrar scrollbar cuando hay scroll activo */
+html.scrolling ::-webkit-scrollbar-thumb {
+  opacity: 1;
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-color: var(--azul-noche) transparent;
   scrollbar-width: thin;
-}
-
-/* En pantallas anchas (1500px+), la scrollbar se camufla con las edge-lines */
-@media (min-width: 1500px) {
-  ::-webkit-scrollbar {
-    width: calc((100vw - 1424px) / 2);
-  }
+  scrollbar-gutter: stable;
 }

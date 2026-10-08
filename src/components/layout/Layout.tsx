@@ -5,6 +5,7 @@ import { Footer } from './Footer';
 import { CartDrawer } from '../cart/CartDrawer';
 import { WhatsAppButton } from './WhatsAppButton';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { useScrollbarVisibility } from '../../hooks/useScrollbarVisibility';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children, onOpenAgenda }) => {
   useScrollReveal();
+  useScrollbarVisibility();
 
   return (
     <div className="min-h-screen bg-[color:var(--surface-page)] text-[color:var(--text-primary)] flex flex-col font-sans selection:bg-[color:var(--accent)] selection:text-[color:var(--accent-fg)]">
