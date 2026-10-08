@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Wordmark } from '../ui/Wordmark';
 import { Button } from '../ui/Button';
 import { Container } from './Container';
@@ -13,6 +13,7 @@ export interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { totalItems, openCart } = useCart();
+  const location = useLocation();
 
   const navLinks = [
     { label: 'Productos', href: '/productos' },
@@ -35,15 +36,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
 
           {/* Zone 2: Clean text navigation links */}
           <nav className="hidden lg:flex items-center gap-7 text-xs md:text-sm font-medium text-[color:var(--text-secondary)]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="hover:text-[color:var(--accent)] transition-colors whitespace-nowrap py-1 cursor-pointer"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`relative whitespace-nowrap py-1 cursor-pointer transition-colors ${
+                    isActive
+                      ? 'text-[color:var(--accent)] font-semibold'
+                      : 'hover:text-[color:var(--accent)]'
+                  }`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <div className="absolute -bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--celeste-soporte)] rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Zone 3: Primary Action & Cart */}
