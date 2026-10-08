@@ -42,6 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
                 <Link
                   key={link.href}
                   to={link.href}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className={`relative whitespace-nowrap py-1 cursor-pointer transition-colors ${
                     isActive
                       ? 'text-[color:var(--accent)] font-semibold'
@@ -102,7 +103,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
               <Link
                 key={link.href}
                 to={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="text-sm font-medium text-[color:var(--text-secondary)] hover:text-[color:var(--accent)] py-1.5 transition-colors"
               >
                 {link.label}
