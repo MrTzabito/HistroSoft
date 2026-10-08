@@ -35,7 +35,7 @@ export const ProductsCatalogSection: React.FC<ProductsCatalogSectionProps> = ({
       : PRODUCTS.filter((p) => p.categorySlug === activeCategory);
 
   return (
-    <section id="productos" className="py-20 md:py-28 border-b-2 border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)] relative">
+    <section id="productos" className="py-12 md:py-16 border-b-2 border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)] relative">
       <Container>
         {/* Split Section Header */}
         <SectionHeader

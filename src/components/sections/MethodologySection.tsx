@@ -6,7 +6,7 @@ import { FileText, CheckCircle2 } from 'lucide-react';
 
 export const MethodologySection: React.FC = () => {
   return (
-    <section id="metodologia" className="py-20 md:py-28 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
+    <section id="metodologia" className="py-12 md:py-16 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader

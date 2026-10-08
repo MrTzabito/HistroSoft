@@ -17,9 +17,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
 
   const navLinks = [
     { label: 'Productos', href: '/productos' },
-    { label: 'Metodología', href: '/metodologia' },
     { label: 'Casos', href: '/casos' },
     { label: 'Preguntas', href: '/preguntas' },
+    { label: 'Metodología', href: '/metodologia' },
     { label: 'Software personalizado', href: '/software' },
   ];
 

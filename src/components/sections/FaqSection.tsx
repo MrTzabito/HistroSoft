@@ -28,7 +28,7 @@ export const FaqSection: React.FC = () => {
   }));
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
+    <section id="faq" className="py-12 md:py-16 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
