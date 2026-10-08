@@ -175,7 +175,7 @@ export const ProductsCatalogSection: React.FC<ProductsCatalogSectionProps> = ({
                       <Button
                         variant="primary"
                         size="sm"
-                        onClick={() => addItem(product)}
+                        onClick={() => setSelectedProductForPlans(product)}
                         iconLeft={<Plus className="w-3.5 h-3.5" />}
                         className="btn-shimmer shadow-sm hover:shadow-[0_4px_16px_rgba(23,71,201,0.28)] transition-all"
                       >

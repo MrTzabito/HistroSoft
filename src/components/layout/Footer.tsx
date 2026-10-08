@@ -84,6 +84,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
                   Consultar software personalizado →
                 </Link>
               </p>
+              <p>
+                <Link to="/contacto" className="hover:text-[color:var(--accent)] transition-colors block">Escríbanos</Link>
+              </p>
             </div>
           </div>
         </div>
@@ -94,9 +97,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
             © 2026 HistroSoft. Todos los derechos reservados.
           </div>
           <div className="flex items-center gap-6">
-            <span className="hover:text-[color:var(--text-secondary)] cursor-pointer">Términos del servicio</span>
-            <span className="hover:text-[color:var(--text-secondary)] cursor-pointer">Política de privacidad</span>
-            <span className="hover:text-[color:var(--text-secondary)] cursor-pointer">Acuerdos SLA</span>
+            <Link to="/terminos" className="hover:text-[color:var(--text-secondary)] transition-colors">Términos del servicio</Link>
+            <Link to="/privacidad" className="hover:text-[color:var(--text-secondary)] transition-colors">Política de privacidad</Link>
+            <Link to="/sla" className="hover:text-[color:var(--text-secondary)] transition-colors">Acuerdos SLA</Link>
           </div>
         </div>
       </Container>

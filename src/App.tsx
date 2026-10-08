@@ -13,6 +13,10 @@ const MethodologyPage = lazy(() => import('./pages/MethodologyPage').then((m) =>
 const CasesPage = lazy(() => import('./pages/CasesPage').then((m) => ({ default: m.CasesPage })));
 const FaqPage = lazy(() => import('./pages/FaqPage').then((m) => ({ default: m.FaqPage })));
 const SoftwarePage = lazy(() => import('./pages/SoftwarePage').then((m) => ({ default: m.SoftwarePage })));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage').then((m) => ({ default: m.TermsOfServicePage })));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })));
+const SLAPage = lazy(() => import('./pages/SLAPage').then((m) => ({ default: m.SLAPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
 import { ContactModal } from './components/sections/ContactModal';
 
 // URLs antiguas (anclas #seccion) -> rutas actuales
@@ -59,6 +63,10 @@ function MainApp() {
           <Route path="/casos" element={<CasesPage />} />
           <Route path="/preguntas" element={<FaqPage />} />
           <Route path="/software" element={<SoftwarePage />} />
+          <Route path="/terminos" element={<TermsOfServicePage />} />
+          <Route path="/privacidad" element={<PrivacyPolicyPage />} />
+          <Route path="/sla" element={<SLAPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
           {Object.entries(PATH_REDIRECTS).map(([from, to]) => (
             <Route key={from} path={from} element={<Navigate to={to} replace />} />
           ))}

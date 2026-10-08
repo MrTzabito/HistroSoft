@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '../layout/Container';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Button } from '../ui/Button';
 import { SkeletonImage } from '../ui/Skeleton';
 import { PRODUCTS } from '../../data/products';
+import { ProductDetails } from '../../types';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
+import { ProductPlansModal } from '../modals/ProductPlansModal';
 
 export const FeaturedProductsSection: React.FC = () => {
   const navigate = useNavigate();
   const { addItem } = useCart();
+  const [selectedProductForPlans, setSelectedProductForPlans] = useState<ProductDetails | null>(null);
 
   // Obtener productos destacados (que tengan badge o sean populares)
   const featuredProducts = PRODUCTS.filter(p => p.badge).slice(0, 3);
@@ -22,7 +25,7 @@ export const FeaturedProductsSection: React.FC = () => {
   const handleAddToCart = (productId: string) => {
     const product = PRODUCTS.find(p => p.id === productId);
     if (product) {
-      addItem(product);
+      setSelectedProductForPlans(product);
     }
   };
 
@@ -115,6 +118,13 @@ export const FeaturedProductsSection: React.FC = () => {
         </div>
 
       </Container>
+
+      <ProductPlansModal
+        product={selectedProductForPlans}
+        open={Boolean(selectedProductForPlans)}
+        onClose={() => setSelectedProductForPlans(null)}
+        onConsultCustom={() => {}}
+      />
     </section>
   );
 };
