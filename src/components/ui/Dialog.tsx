@@ -57,32 +57,36 @@ export const Dialog: React.FC<DialogProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="dialog-title"
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-[22px] shadow-[0_12px_36px_rgba(11,31,68,0.28),0_4px_12px_rgba(11,31,68,0.18)] p-6 md:p-8 pr-6 md:pr-10 z-50 my-8 max-h-[90vh] overflow-y-auto text-left transform transition-all duration-300 animate-in fade-in zoom-in-95`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-[22px] shadow-[0_12px_36px_rgba(11,31,68,0.28),0_4px_12px_rgba(11,31,68,0.18)] z-50 my-8 max-h-[90vh] text-left transform transition-all duration-300 animate-in fade-in zoom-in-95 flex flex-col`}
       >
-        <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-[color:var(--border-subtle)]">
-          <div>
-            <h3
-              id="dialog-title"
-              className="font-display font-bold text-xl md:text-2xl text-[color:var(--text-primary)] tracking-tight"
+        <div className="px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-[color:var(--border-subtle)] flex-shrink-0">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3
+                id="dialog-title"
+                className="font-display font-bold text-xl md:text-2xl text-[color:var(--text-primary)] tracking-tight"
+              >
+                {title}
+              </h3>
+              {description && (
+                <p className="text-xs md:text-sm text-[color:var(--text-muted)] mt-1 leading-relaxed">
+                  {description}
+                </p>
+              )}
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full border border-[color:var(--border-subtle)] flex items-center justify-center text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] transition-colors shrink-0 cursor-pointer"
+              aria-label="Cerrar ventana"
             >
-              {title}
-            </h3>
-            {description && (
-              <p className="text-xs md:text-sm text-[color:var(--text-muted)] mt-1 leading-relaxed">
-                {description}
-              </p>
-            )}
+              <X className="w-4 h-4" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full border border-[color:var(--border-subtle)] flex items-center justify-center text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] transition-colors shrink-0 cursor-pointer"
-            aria-label="Cerrar ventana"
-          >
-            <X className="w-4 h-4" />
-          </button>
         </div>
 
-        <div className="relative">{children}</div>
+        <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6 md:py-8">
+          {children}
+        </div>
       </div>
     </div>
   );
