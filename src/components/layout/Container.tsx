@@ -13,14 +13,17 @@ export const Container: React.FC<ContainerProps> = ({
   ...props
 }) => {
   const maxSizes = {
-    narrow: 'max-w-[960px]',
-    default: 'max-w-[1200px]',
-    wide: 'max-w-[1360px]',
+    narrow: 960,
+    default: 1200,
+    wide: 1360,
   };
 
   return (
     <div
-      className={`w-full mx-auto px-4 sm:px-6 md:px-8 ${maxSizes[size]} ${className}`}
+      className={`w-full mx-auto px-4 sm:px-6 md:px-8 ${className}`}
+      style={{
+        maxWidth: `min(${maxSizes[size]}px, 90vw)`,
+      }}
       {...props}
     >
       {children}

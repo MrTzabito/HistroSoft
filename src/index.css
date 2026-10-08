@@ -239,6 +239,27 @@
   }
 }
 
+@keyframes whatsapp-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+@keyframes whatsapp-pulse-ring {
+  0% {
+    box-shadow: 0 8px 24px rgba(11, 31, 68, 0.28), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(11, 31, 68, 0.28), 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(11, 31, 68, 0.28), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
 .animate-ambient-glow {
   animation: ambient-glow 10s ease-in-out infinite;
 }
@@ -249,6 +270,14 @@
 
 .animate-pulse-subtle {
   animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.animate-whatsapp-bounce {
+  animation: whatsapp-bounce 2s ease-in-out infinite;
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse-ring 2.5s ease-out infinite;
 }
 
 /* Smooth Card Hover with Lift and Glow */
@@ -301,40 +330,6 @@
   transform: translateX(100%) rotate(25deg);
 }
 
-/* Columnas laterales de color (azul noche) con líneas apiladas del logo.
-   Solo aparecen cuando sobra espacio a los lados del contenedor más ancho (1360px + padding).
-   Van fijas al viewport y las líneas se deslizan despacio en dos capas (efecto de profundidad). */
-.edge-lines {
-  display: none;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: calc((100vw - 1424px) / 2);
-  pointer-events: none;
-  z-index: 41; /* sobre el navbar (z-40), bajo el carrito flotante y los modales */
-  background-color: #0B1F44;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 640' preserveAspectRatio='none'%3E%3Cg fill='%233BB3F5' fill-opacity='0.55'%3E%3Crect x='0' y='80' width='46' height='12'/%3E%3Crect x='0' y='108' width='78' height='12'/%3E%3Crect x='0' y='136' width='58' height='12'/%3E%3C/g%3E%3Cg fill='%231747C9' fill-opacity='0.9'%3E%3Crect x='0' y='400' width='70' height='12'/%3E%3Crect x='0' y='428' width='38' height='12'/%3E%3Crect x='0' y='456' width='90' height='12'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 960' preserveAspectRatio='none'%3E%3Cg fill='%233BB3F5' fill-opacity='0.22'%3E%3Crect x='0' y='200' width='30' height='6'/%3E%3Crect x='0' y='214' width='54' height='6'/%3E%3Crect x='0' y='600' width='62' height='6'/%3E%3Crect x='0' y='614' width='24' height='6'/%3E%3Crect x='0' y='780' width='44' height='6'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 100% 640px, 100% 960px;
-  background-repeat: repeat-y, repeat-y;
-  animation: edge-drift 56s linear infinite;
-}
-.edge-lines-left { left: 0; }
-.edge-lines-right { right: 0; transform: scaleX(-1); animation-direction: reverse; }
-
-@keyframes edge-drift {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: 0 640px, 0 -960px; }
-}
-
-@media (min-width: 1500px) {
-  .edge-lines { display: block; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .edge-lines { animation: none; }
-}
 
 /* Aparición suave al hacer scroll (ver hooks/useScrollReveal) */
 [data-reveal] {

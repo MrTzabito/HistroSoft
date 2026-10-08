@@ -21,9 +21,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenAgenda }) => {
       <Navbar onOpenAgenda={onOpenAgenda} />
 
       <main className="flex-1 relative">
-        {/* Márgenes laterales en pantallas anchas: líneas apiladas del logo */}
-        <div aria-hidden="true" className="edge-lines edge-lines-left" />
-        <div aria-hidden="true" className="edge-lines edge-lines-right" />
         {children}
       </main>
 
