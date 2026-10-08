@@ -35,9 +35,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
         {/* Cols 4–12 or 1-12: Title and description */}
         <div className={`${eyebrow ? 'md:col-span-9' : ''} space-y-3`}>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-[color:var(--text-primary)] tracking-tight leading-[1.08] text-balance">
-            {title}
-          </h2>
+          <div className="space-y-2">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-[color:var(--text-primary)] tracking-tight leading-[1.08] text-balance">
+              {title}
+            </h2>
+            {/* Línea decorativa bajo el título */}
+            <div className="h-1 w-16 bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--celeste-soporte)] rounded-full" />
+          </div>
           {description && (
             <p className="font-sans text-[color:var(--text-muted)] text-base md:text-lg leading-relaxed max-w-3xl">
               {description}
