@@ -57,7 +57,7 @@ export const Dialog: React.FC<DialogProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="dialog-title"
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-[22px] shadow-[0_12px_36px_rgba(11,31,68,0.28),0_4px_12px_rgba(11,31,68,0.18)] p-6 md:p-8 z-10 my-8 max-h-[90vh] overflow-y-auto text-left transform transition-all duration-300 animate-in fade-in zoom-in-95`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] rounded-[22px] shadow-[0_12px_36px_rgba(11,31,68,0.28),0_4px_12px_rgba(11,31,68,0.18)] p-6 md:p-8 z-50 my-8 max-h-[90vh] overflow-y-auto text-left transform transition-all duration-300 animate-in fade-in zoom-in-95`}
       >
         <div className="flex items-start justify-between gap-4 mb-5 pb-4 border-b border-[color:var(--border-subtle)]">
           <div>
