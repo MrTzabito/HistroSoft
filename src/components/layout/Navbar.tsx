@@ -7,7 +7,7 @@ import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
 export interface NavbarProps {
-  onOpenAgenda: () => void;
+  onOpenAgenda?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
@@ -74,14 +74,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
               )}
             </button>
 
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={onOpenAgenda}
-              className="hidden sm:inline-flex"
-            >
-              Agenda una llamada
-            </Button>
+            <Link to="/contacto" className="hidden sm:inline-flex">
+              <Button
+                variant="primary"
+                size="sm"
+              >
+                Contáctanos
+              </Button>
+            </Link>
 
             {/* Mobile menu toggle button */}
             <button
@@ -124,17 +124,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAgenda }) => {
               <ShoppingCart className="w-4 h-4 text-[color:var(--accent)]" />
               <span>Ver carrito ({totalItems})</span>
             </button>
-            <Button
-              variant="primary"
-              size="md"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAgenda();
-              }}
-              className="w-full justify-center"
+            <Link
+              to="/contacto"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full"
             >
-              Agenda una llamada
-            </Button>
+              <Button
+                variant="primary"
+                size="md"
+                className="w-full justify-center"
+              >
+                Contáctanos
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -10,7 +10,7 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
   return (
-    <footer className="theme-dark w-full bg-[color:var(--surface-inverse)] border-t border-[color:var(--border-subtle)] pt-16 pb-12 text-left">
+    <footer className="theme-dark w-full bg-[color:var(--surface-inverse)] border-t border-[color:var(--border-subtle)] pt-16 pb-12 text-left relative z-50">
       <Container>
         {/* Top principles bar */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-[color:var(--border-subtle)]">
@@ -92,11 +92,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAgenda }) => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[color:var(--text-faint)]">
+        <div className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-xs text-[color:var(--text-faint)]">
           <div>
             © 2026 HistroSoft. Todos los derechos reservados.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link to="/terminos" className="hover:text-[color:var(--text-secondary)] transition-colors">Términos del servicio</Link>
             <Link to="/privacidad" className="hover:text-[color:var(--text-secondary)] transition-colors">Política de privacidad</Link>
             <Link to="/sla" className="hover:text-[color:var(--text-secondary)] transition-colors">Acuerdos SLA</Link>
