@@ -23,7 +23,7 @@ export const CaseStudiesSection: React.FC = () => {
             >
               {/* Industry Tag */}
               <div className="mb-4">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[color:var(--accent)] bg-[color:var(--accent-subtle)] px-2.5 py-1 rounded-full border border-[color:var(--accent)]/30">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[color:var(--accent)] bg-[color:var(--accent-subtle)] px-3 py-1.5 rounded-full border border-[color:var(--accent)]/30 inline-block whitespace-nowrap overflow-hidden text-ellipsis">
                   {study.clientIndustry}
                 </span>
               </div>
