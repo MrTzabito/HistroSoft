@@ -22,7 +22,7 @@ export const CaseStudiesSection: React.FC = () => {
               className="flex flex-col rounded-[22px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] p-6 md:p-8 card-interactive"
             >
               {/* Industry Tag */}
-              <div className="mb-4">
+              <div className="mb-4 text-center">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[color:var(--accent)] bg-[color:var(--accent-subtle)] px-3 py-1.5 rounded-full border border-[color:var(--accent)]/30 inline-block max-w-full">
                   {study.clientIndustry}
                 </span>
