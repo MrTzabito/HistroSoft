@@ -31,7 +31,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
   }));
 
   return (
-    <section id="productos" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
+    <section id="productos" className="py-20 md:py-28 border-b-2 border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -40,7 +40,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
         />
 
         {/* Product selector & Billing cycle row */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 pb-6 border-b border-[color:var(--border-subtle)]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 pb-6 border-b-2 border-[color:var(--border-subtle)]">
           {/* Tabs for products */}
           <Tabs
             items={productTabs}

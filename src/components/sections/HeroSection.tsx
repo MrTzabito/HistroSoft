@@ -15,7 +15,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreConsultation,
 }) => {
   return (
-    <section className="theme-dark relative bg-[color:var(--surface-page)] pt-16 md:pt-28 pb-24 md:pb-56 border-b border-[color:var(--border-subtle)] overflow-hidden">
+    <section className="theme-dark relative bg-[color:var(--surface-page)] pt-16 md:pt-28 pb-24 md:pb-56 border-b-2 border-[color:var(--border-subtle)] overflow-hidden">
       {/* Ambient Animated Glow in Background */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-[color:var(--accent)]/10 rounded-full blur-[130px] pointer-events-none animate-ambient-glow" />
       <div className="absolute top-1/3 right-10 w-[420px] h-[420px] bg-[color:var(--blue)]/5 rounded-full blur-[120px] pointer-events-none animate-ambient-glow [animation-delay:4s]" />

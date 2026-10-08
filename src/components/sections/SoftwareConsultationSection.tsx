@@ -62,7 +62,7 @@ export const SoftwareConsultationSection: React.FC<SoftwareConsultationSectionPr
   };
 
   return (
-    <section id="consultar" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
+    <section id="consultar" className="py-20 md:py-28 border-b-2 border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader

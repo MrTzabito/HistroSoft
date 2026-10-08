@@ -5,7 +5,7 @@ import { CASE_STUDIES } from '../../data/caseStudies';
 
 export const CaseStudiesSection: React.FC = () => {
   return (
-    <section id="casos" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)]">
+    <section id="casos" className="py-20 md:py-28 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader

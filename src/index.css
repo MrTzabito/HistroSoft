@@ -72,9 +72,9 @@
     --text-disabled: #9AA3B5;
 
     /* Bordes */
-    --border-subtle: #E1E8F2;
-    --border-default: #CBD5E5;
-    --border-strong: #A9B6CC;
+    --border-subtle: #D0D9E8;
+    --border-default: #B8C4D8;
+    --border-strong: #9AA6BB;
     --border-hover: var(--gris-pizarra);
 
     /* Acento (azul sobre claro, celeste sobre oscuro) */

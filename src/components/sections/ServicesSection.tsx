@@ -20,7 +20,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   };
 
   return (
-    <section id="servicios" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)]">
+    <section id="servicios" className="py-20 md:py-28 border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -54,7 +54,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div
                   key={service.id}
                   data-reveal
-                  className="border-b border-[color:var(--border-subtle)] transition-all duration-200"
+                  className="border-b-2 border-[color:var(--border-subtle)] transition-all duration-200"
                 >
                   {/* Clickable Header Row with 12px shift & gold tint on hover */}
                   <div

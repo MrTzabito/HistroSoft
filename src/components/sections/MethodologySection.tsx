@@ -6,7 +6,7 @@ import { FileText, CheckCircle2 } from 'lucide-react';
 
 export const MethodologySection: React.FC = () => {
   return (
-    <section id="metodologia" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)]">
+    <section id="metodologia" className="py-20 md:py-28 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -37,7 +37,7 @@ export const MethodologySection: React.FC = () => {
                 data-reveal
                 className="p-6 md:p-8 rounded-[22px] bg-[color:var(--surface-raised)] border border-[color:var(--border-subtle)] card-interactive"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-[color:var(--border-subtle)]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b-2 border-[color:var(--border-subtle)]">
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-xs font-bold text-[color:var(--accent-fg)] bg-[color:var(--accent)] px-2.5 py-0.5 rounded-full">
                       Etapa {stage.step}

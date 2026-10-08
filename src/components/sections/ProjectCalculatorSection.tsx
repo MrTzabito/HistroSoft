@@ -97,7 +97,7 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
   };
 
   return (
-    <section id="calculadora" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
+    <section id="calculadora" className="py-20 md:py-28 border-b-2 border-[color:var(--border-subtle)] bg-[color:var(--surface-sunken)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -215,7 +215,7 @@ export const ProjectCalculatorSection: React.FC<ProjectCalculatorSectionProps> =
 
           {/* Results Card: Right 5 cols */}
           <div className="lg:col-span-5 bg-[color:var(--surface-raised)] border-2 border-[color:var(--accent)] rounded-[22px] p-6 sm:p-8 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-[color:var(--border-subtle)]">
+            <div className="flex items-center justify-between pb-4 border-b-2 border-[color:var(--border-subtle)]">
               <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]">
                 Estimación de ingeniería
               </span>

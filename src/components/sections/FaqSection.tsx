@@ -28,7 +28,7 @@ export const FaqSection: React.FC = () => {
   }));
 
   return (
-    <section id="faq" className="py-20 md:py-28 border-b border-[color:var(--border-subtle)]">
+    <section id="faq" className="py-20 md:py-28 bg-[color:var(--surface-sunken)] border-b-2 border-[color:var(--border-subtle)]">
       <Container>
         {/* Split Section Header */}
         <SectionHeader
@@ -37,7 +37,7 @@ export const FaqSection: React.FC = () => {
         />
 
         {/* Filter categories tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[color:var(--border-subtle)]">
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b-2 border-[color:var(--border-subtle)]">
           {categories.map((cat) => (
             <button
               key={cat.id}
