@@ -383,3 +383,24 @@
 @media (prefers-reduced-motion: reduce) {
   .skeleton { animation: none; }
 }
+
+/* Scrollbar personalizada para modales: color oscuro y contenida */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gris-pizarra);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-noche);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: var(--gris-pizarra) transparent;
+  scrollbar-width: thin;
+}
