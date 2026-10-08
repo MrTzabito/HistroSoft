@@ -388,31 +388,45 @@
   .skeleton { animation: none; }
 }
 
-/* Scrollbar personalizada: visible solo cuando se hace scroll */
-::-webkit-scrollbar {
+/* Scrollbar de la página principal: visible solo durante scroll */
+html::-webkit-scrollbar {
   width: 4px;
 }
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: transparent;
 }
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: var(--azul-noche);
   border-radius: 2px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: var(--celeste-soporte);
 }
 
-/* Mostrar scrollbar cuando hay scroll activo */
-html.scrolling ::-webkit-scrollbar-thumb {
+/* Mostrar scrollbar cuando hay scroll activo (solo en página principal) */
+html.scrolling::-webkit-scrollbar-thumb {
   opacity: 1;
+}
+
+/* Scrollbar de elementos internos (modal, etc): siempre visible */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gris-pizarra);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-noche);
 }
 
 /* Firefox scrollbar */
 * {
-  scrollbar-color: var(--azul-noche) transparent;
+  scrollbar-color: var(--gris-pizarra) transparent;
   scrollbar-width: thin;
-  scrollbar-gutter: stable;
 }
