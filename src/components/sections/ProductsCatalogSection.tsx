@@ -44,7 +44,7 @@ export const ProductsCatalogSection: React.FC<ProductsCatalogSectionProps> = ({
         />
 
         {/* Category Filters Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat.id}
