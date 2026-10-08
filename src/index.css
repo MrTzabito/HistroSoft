@@ -384,23 +384,30 @@
   .skeleton { animation: none; }
 }
 
-/* Scrollbar personalizada para modales: color oscuro y contenida */
+/* Scrollbar personalizada: se camufla con edge-lines en pantalla ancha */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 16px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gris-pizarra);
-  border-radius: 4px;
+  background: var(--azul-noche);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--azul-noche);
+  background: var(--celeste-soporte);
 }
 
 /* Firefox scrollbar */
 * {
-  scrollbar-color: var(--gris-pizarra) transparent;
+  scrollbar-color: var(--azul-noche) transparent;
   scrollbar-width: thin;
+}
+
+/* En pantallas anchas (1500px+), la scrollbar se camufla con las edge-lines */
+@media (min-width: 1500px) {
+  ::-webkit-scrollbar {
+    width: calc((100vw - 1424px) / 2);
+  }
 }
