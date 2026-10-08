@@ -19,13 +19,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Ambient Animated Glow in Background */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-[color:var(--accent)]/10 rounded-full blur-[130px] pointer-events-none animate-ambient-glow" />
       <div className="absolute top-1/3 right-10 w-[420px] h-[420px] bg-[color:var(--blue)]/5 rounded-full blur-[120px] pointer-events-none animate-ambient-glow [animation-delay:4s]" />
+      <div className="absolute bottom-1/4 left-1/3 w-[380px] h-[380px] bg-[color:var(--celeste-soporte)]/8 rounded-full blur-[110px] pointer-events-none animate-ambient-glow [animation-delay:2s]" />
+      <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-[color:var(--accent)]/8 rounded-full blur-[140px] pointer-events-none animate-ambient-glow [animation-delay:6s]" />
 
       {/* Motivo de líneas horizontales apiladas, inspirado en el símbolo del logo */}
       <div aria-hidden="true" className="hidden md:flex absolute right-0 bottom-0 w-[46%] max-w-[560px] flex-col items-end gap-5 pb-10 pointer-events-none">
-        <div className="draw-line h-3 w-[42%] rounded-l-sm bg-[color:var(--accent)]/25" style={{ '--d': '500ms' } as React.CSSProperties} />
-        <div className="draw-line h-3 w-[70%] rounded-l-sm bg-[color:var(--text-primary)]/10" style={{ '--d': '650ms' } as React.CSSProperties} />
-        <div className="draw-line h-3 w-[52%] rounded-l-sm bg-[color:var(--accent)]/15" style={{ '--d': '800ms' } as React.CSSProperties} />
-        <div className="draw-line h-3 w-[86%] rounded-l-sm bg-[color:var(--text-primary)]/6" style={{ '--d': '950ms' } as React.CSSProperties} />
+        <div className="animate-slide-lines h-3 w-[42%] rounded-l-sm bg-[color:var(--accent)]/25" style={{ '--d': '500ms' } as React.CSSProperties} />
+        <div className="animate-slide-lines h-3 w-[70%] rounded-l-sm bg-[color:var(--text-primary)]/10" style={{ '--d': '650ms' } as React.CSSProperties} />
+        <div className="animate-slide-lines h-3 w-[52%] rounded-l-sm bg-[color:var(--accent)]/15" style={{ '--d': '800ms' } as React.CSSProperties} />
+        <div className="animate-slide-lines h-3 w-[86%] rounded-l-sm bg-[color:var(--text-primary)]/6" style={{ '--d': '950ms' } as React.CSSProperties} />
       </div>
 
       <Container className="relative z-10">

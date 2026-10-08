@@ -4,7 +4,7 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Textarea } from '../components/ui/Textarea';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Clock } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -84,30 +84,12 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Teléfono */}
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[color:var(--accent-subtle)]">
-                  <Phone className="h-6 w-6 text-[color:var(--accent)]" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[color:var(--text-primary)]">Teléfono</h3>
-                <p className="text-sm text-[color:var(--text-secondary)] mt-1">
-                  +51 (1) XXXX-XXXX
-                </p>
-                <p className="text-xs text-[color:var(--text-faint)] mt-1">
-                  Para consultas urgentes
-                </p>
-              </div>
-            </div>
-
             {/* WhatsApp */}
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#25D366]/20">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#25D366]" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.968 1.495c-1.53.923-2.775 2.237-3.54 3.86-.765 1.624-.923 3.35-.46 5.038.463 1.687 1.423 3.127 2.796 4.204 1.373 1.077 3.127 1.65 4.956 1.65 1.828 0 3.582-.573 4.955-1.65 1.373-1.077 2.333-2.517 2.796-4.204.463-1.688.305-3.414-.46-5.038-.765-1.623-2.01-2.937-3.54-3.86a9.87 9.87 0 00-4.941-1.495z" />
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#25D366]">
+                  <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.148.528 4.185 1.469 5.974L0 24l6.372-1.436A11.973 11.973 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.954 0-3.845-.469-5.499-1.297l-.394-.21-4.088.926.943-3.876-.213-.394A9.968 9.968 0 0 1 2 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.5-9.5c-.3-.15-1.762-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.18-.3 0-.46.14-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.04-.54-.08-.16-.67-1.6-.92-2.2-.24-.56-.49-.49-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.52.08-.79.38-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.08-.12-.27-.2-.56-.34z" />
                   </svg>
                 </div>
               </div>
