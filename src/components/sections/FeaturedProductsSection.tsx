@@ -120,10 +120,10 @@ export const FeaturedProductsSection: React.FC = () => {
             variant="secondary"
             size="md"
             onClick={handleViewAllProducts}
-            className="gap-2 group"
+            className="gap-2 group px-8 hover:shadow-lg hover:border-[color:var(--accent)] transition-all duration-300"
           >
             Ver todos los productos
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 group-hover:text-[color:var(--accent)] transition-all duration-300" />
           </Button>
         </div>
       </Container>
