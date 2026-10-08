@@ -326,6 +326,7 @@
 
 @media (min-width: 1500px) {
   .edge-lines { display: block; }
+  body { background-color: var(--azul-noche); }
 }
 
 @media (prefers-reduced-motion: reduce) {
